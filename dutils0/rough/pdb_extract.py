@@ -1,15 +1,15 @@
 """
-Extract a subset of atoms from a PDB file and return as a PDB-format string.
+Extract a subset of atoms from a PDB or CIF file and return as a PDB-format string.
 
-Uses BioPython's Bio.PDB to parse, filter via custom Select subclasses,
-and write to a string via PDBIO and StringIO.
+Uses BioPython's Bio.PDB to parse (PDBParser or MMCIFParser), filter via custom
+Select subclasses, and write to a string via PDBIO and StringIO.
 """
 
 from __future__ import annotations
 
 from io import StringIO
 
-from Bio.PDB import PDBParser, PDBIO, Select
+from Bio.PDB import MMCIFParser, PDBIO, PDBParser, Select
 
 
 class ResidueSelect(Select):
@@ -48,6 +48,17 @@ class AtomIndexSelect(Select):
         return atom.get_serial_number() in self.indices_set
 
 
+def _structure_from_file(path: str):
+    """Parse a PDB or CIF file and return a Bio.PDB Structure."""
+    path_lower = path.lower()
+    if path_lower.endswith(".cif") or path_lower.endswith(".cif.gz"):
+        parser = MMCIFParser(QUIET=True)
+    else:
+        parser = PDBParser(QUIET=True)
+    structure = parser.get_structure("structure", path)
+    return structure
+
+
 def _parse_residue_selector(selector: str) -> tuple[str, int]:
     """Parse 'CHAIN:RESNUM' into (chain_id, res_num)."""
     parts = [p.strip() for p in selector.split(":")]
@@ -75,15 +86,16 @@ def extract_selected_atoms_as_pdb(
     atom_indices: list[int] | None = None,
 ) -> str:
     """
-    Read a PDB file and return a PDB-format string containing only selected atoms.
+    Read a PDB or CIF file and return a PDB-format string containing only selected atoms.
 
     Exactly one of residue_selector or atom_indices must be provided.
     Atom indices are PDB serial numbers from the original file (columns 7-11 of
     ATOM/HETATM lines). Duplicate serials in the file are treated as one.
     If the file has multiple models, only the first model is used.
+    CIF input is detected by a path ending in .cif or .cif.gz.
 
     Args:
-        pdb_path: Path to the PDB file.
+        pdb_path: Path to a PDB or CIF file (.pdb, .cif, .cif.gz, etc.).
         residue_selector: Optional selector in form "CHAIN:RESNUM" (e.g. "A:42").
             Chain ID must be a single character. Insertion codes are not supported;
             if multiple residues share the same sequence number (e.g. 42 and 42A),
@@ -104,9 +116,10 @@ def extract_selected_atoms_as_pdb(
             any requested atom index is missing.
 
     Example:
-        Residue selection (requires a path to an existing PDB file)::
+        Residue selection (PDB or CIF)::
 
             pdb_str = extract_selected_atoms_as_pdb("/path/to/file.pdb", residue_selector="A:42")
+            pdb_str = extract_selected_atoms_as_pdb("/path/to/file.cif", residue_selector="A:42")
 
         Atom-index selection::
 
@@ -121,8 +134,7 @@ def extract_selected_atoms_as_pdb(
             "Cannot provide both residue_selector and atom_indices."
         )
 
-    parser = PDBParser(QUIET=True)
-    structure = parser.get_structure("structure", pdb_path)
+    structure = _structure_from_file(pdb_path)
     model = structure[0]
 
     if residue_selector is not None:
