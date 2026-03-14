@@ -7,9 +7,12 @@ Select subclasses, and write to a string via PDBIO and StringIO.
 
 from __future__ import annotations
 
+import warnings
 from io import StringIO
 
 from Bio.PDB import MMCIFParser, PDBIO, PDBParser, Select
+from Bio.PDB.MMCIF2Dict import MMCIF2Dict
+from Bio.PDB.PDBExceptions import PDBConstructionWarning
 
 
 class ResidueSelect(Select):
@@ -48,11 +51,43 @@ class AtomIndexSelect(Select):
         return atom.get_serial_number() in self.indices_set
 
 
+# Optional _atom_site keys that MMCIFParser expects but mmCIF allows to omit.
+_ATOM_SITE_DEFAULTS = (
+    ("_atom_site.B_iso_or_equiv", "0.0"),
+    ("_atom_site.occupancy", "1.0"),
+)
+
+
+def _inject_mmcif_atom_site_defaults(mmcif_dict: dict) -> None:
+    """Inject default values for optional _atom_site keys missing from the dict."""
+    try:
+        n = len(mmcif_dict["_atom_site.id"])
+    except KeyError:
+        return
+    for key, default_val in _ATOM_SITE_DEFAULTS:
+        if key not in mmcif_dict:
+            mmcif_dict[key] = [default_val] * n
+
+
+class _PermissiveMMCIFParser(MMCIFParser):
+    """MMCIFParser that fills in default values for optional _atom_site columns."""
+
+    def get_structure(self, structure_id: str, filename: str):
+        with warnings.catch_warnings():
+            if self.QUIET:
+                warnings.filterwarnings("ignore", category=PDBConstructionWarning)
+            self._mmcif_dict = MMCIF2Dict(filename)
+            _inject_mmcif_atom_site_defaults(self._mmcif_dict)
+            self._build_structure(structure_id)
+            self._structure_builder.set_header(self._get_header())
+        return self._structure_builder.get_structure()
+
+
 def _structure_from_file(path: str):
     """Parse a PDB or CIF file and return a Bio.PDB Structure."""
     path_lower = path.lower()
     if path_lower.endswith(".cif") or path_lower.endswith(".cif.gz"):
-        parser = MMCIFParser(QUIET=True)
+        parser = _PermissiveMMCIFParser(QUIET=True)
     else:
         parser = PDBParser(QUIET=True)
     structure = parser.get_structure("structure", path)
