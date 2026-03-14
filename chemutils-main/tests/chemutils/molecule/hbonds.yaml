@@ -1,0 +1,590 @@
+- name: Water
+  smiles: O
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [0]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [0]
+- name: Primary Alcohol
+  smiles: CCO
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2]
+- name: Primary Hydroxide
+  smiles: CC[O-]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [2]
+- name: Secondary Alcohol
+  smiles: CCC(O)CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Secondary Hydroxide
+  smiles: CCC([O-])CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [3]
+- name: Tertiary Alcohol
+  smiles: CCC(O)(CC)CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Tertiary Hydroxide
+  smiles: CCC([O-])(CC)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [3]
+- name: Enol
+  smiles: C=CO
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2]
+- name: Phenol
+  smiles: c1ccccc1O
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [6]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [6]
+- name: Phenolate
+  smiles: c1ccccc1[O-]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [6]
+- name: Aromatic Alcohol
+  smiles: c1ccccc1CO
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [7]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [7]
+- name: Aromatic Hydroxide
+  smiles: c1ccccc1C[O-]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [7]
+- name: Ether
+  smiles: CCOCC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2]
+- name: Aromatic Ether
+  smiles: CCOc1ccccc1
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2]
+- name: Aldehyde
+  smiles: CCC=O
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Ketone
+  smiles: CCC(=O)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Ketene
+  smiles: CCC(=C=O)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [4]
+- name: Carboxylic Acid
+  smiles: CCC(=O)O
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Carboxylate
+  smiles: CCC(=O)[O-]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Ester
+  smiles: CCC(=O)OCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Hydroperoxide
+  smiles: CCOO
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [2, 3]
+- name: Peroxide
+  smiles: CCOOCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [2, 3]
+- name: Hemiacetal
+  smiles: CCC(O)OCC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Hemiketal
+  smiles: CCC(CC)(O)OCC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [5]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [5, 6]
+- name: Acetal
+  smiles: CCC(OCC)OCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 6]
+- name: Ketal
+  smiles: CCC(CC)(OCC)OCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [5, 8]
+- name: Orthoester
+  smiles: CCC(OCC)(OCC)OCC
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [3, 6, 9]
+- name: Organic Acid Anhydride
+  smiles: CCC(=O)OC(=O)CC
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [3, 4, 6]
+- name: Aromatic Oxygen
+  smiles: o1cccc1
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [0]
+- name: Nitrosamine
+  smiles: CCN(N=O)CC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [3, 4]
+- name: Alkyl nitrites
+  smiles: CCON=O
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 5
+  hydrogen_acceptor_indices: [2, 3, 4]
+- name: Ammonia
+  smiles: N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 3
+  hydrogen_donor_indices: [0]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [0]
+- name: Ammonium
+  smiles: "[NH4+]"
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 4
+  hydrogen_donor_indices: [0]
+- name: Primary Amine
+  smiles: CCN
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [2]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [2]
+- name: Primary Ammonium
+  smiles: CC[NH3+]
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 3
+  hydrogen_donor_indices: [2]
+- name: Secondary Amine
+  smiles: CCNCC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [2]
+- name: Secondary Ammonium
+  smiles: CC[NH2+]CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [2]
+- name: Tertiary Amine
+  smiles: CCN(CC)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [2]
+- name: Tertiary Ammonium
+  smiles: CC[NH+](CC)CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+- name: Quaternary Ammonium
+  smiles: CC[N+](CC)(CC)CC
+- name: Primary Aldimine
+  smiles: CCC=N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [3]
+- name: Secondary Aldimine
+  smiles: CCC=NCC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [3]
+- name: Primary Ketimine
+  smiles: CCC(=N)CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [3]
+- name: Secondary Ketimine
+  smiles: CCC(=NCC)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [3]
+- name: Iminium
+  smiles: CCC(CC)=[N+](CC)CC
+- name: Amidine
+  smiles: CCC(=N)N
+  num_hydrogen_donors: 2
+  num_donor_hydrogens: 3
+  hydrogen_donor_indices: [3, 4]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [3]
+- name: Enamine
+  smiles: C=CN
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [2]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [2]
+- name: Guanidine
+  smiles: CCNC(=N)N
+  num_hydrogen_donors: 3
+  num_donor_hydrogens: 4
+  hydrogen_donor_indices: [2, 4, 5]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [4]
+- name: Azide
+  smiles: CN=[N+]=[N-]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [1, 3]
+- name: Azide
+  smiles: C[N-][N+]#N
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [1, 3]
+- name: Azo
+  smiles: CCN=NCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2, 3]
+- name: Nitrile
+  smiles: CCC#N
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [3]
+- name: Isonitrile
+  smiles: CC[N-]#[C+]
+- name: Primary Amide
+  smiles: CCC(=O)N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Secondary Amide
+  smiles: CCC(=O)NCC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Tertiary Amide
+  smiles: CCC(=O)N(CC)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Cyanate
+  smiles: CCOC#N
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [2, 4]
+- name: Isocyanate
+  smiles: CCN=C=O
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [2, 4]
+- name: Nitrate
+  smiles: CCO[N+](=O)[O-]
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [2, 4, 5]
+- name: Nitro
+  smiles: CC[N+](=O)[O-]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Aniline
+  smiles: c1ccccc1N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [6]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [6]
+- name: Pyridine
+  smiles: c1ccccc1N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [6]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [6]
+- name: Pyrrole
+  smiles: "[nH]1cccc1"
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [0]
+- name: Imidazole
+  smiles: c1cnc[nH]1
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [2]
+- name: Carbodiimide
+  smiles: CCN=C=NCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2, 4]
+- name: Carboximidate
+  smiles: CCC(=NCC)OCC
+  num_hydrogen_donors: 0
+  num_donor_hydrogens: 0
+  hydrogen_donor_indices: []
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [3, 6]
+- name: Cyanamide
+  smiles: CC(NCC)C#N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [2, 6]
+- name: Hydrogen Sulfide
+  smiles: S
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [0]
+- name: Primary Thiol
+  smiles: CCS
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+- name: Primary Thiolate
+  smiles: CC[S-]
+- name: Secondary Thiol
+  smiles: CCC(S)CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+- name: Secondary Thiolate
+  smiles: CCC([S-])CC
+- name: Tertiary Thiol
+  smiles: CCC(S)(CC)CC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+- name: Tertiary Thiolate
+  smiles: CCC([S-])(CC)CC
+- name: Sulfide
+  smiles: CCSCC
+- name: Persulfide
+  smiles: CCSS
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [3]
+- name: Thioenol
+  smiles: C=CS
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [2]
+- name: Disulfide
+  smiles: CCSSCC
+- name: Sulfoxide
+  smiles: CC[S+]([O-])CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [3]
+- name: Sulfone
+  smiles: CCS(=O)(=O)CC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Sulfinic Acid
+  smiles: CCS(=O)O
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Sulfinate
+  smiles: CCS(=O)[O-]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 5
+  hydrogen_acceptor_indices: [3, 4]
+- name: Sulfinate Ester
+  smiles: CCS(=O)OCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Thiosulfinic Acid
+  smiles: CCS(=S)O
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Thiosulfinate
+  smiles: CCS(=S)[O-]
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 5
+  hydrogen_acceptor_indices: [3, 4]
+- name: Thiosulfinate Ester
+  smiles: CCS(=S)OCC
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 4
+  hydrogen_acceptor_indices: [3, 4]
+- name: Sulfonic Acid
+  smiles: CCS(=O)(=O)O
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [5]
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [3, 4, 5]
+- name: Sulfonate
+  smiles: CCS(=O)(=O)[O-]
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 7
+  hydrogen_acceptor_indices: [3, 4, 5]
+- name: Sulfonate Ester
+  smiles: CCS(=O)(=O)OCC
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [3, 4, 5]
+- name: Thiocyanate
+  smiles: CCSC#N
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 1
+  hydrogen_acceptor_indices: [4]
+- name: Isothiocyanate
+  smiles: CCN=C=S
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [2, 4]
+- name: Thioaldehyde
+  smiles: CCC=S
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Thioketone
+  smiles: CCC(=S)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: S-Nitrosothiol
+  smiles: CCSN=O
+  num_hydrogen_acceptors: 2
+  num_acceptor_lone_pairs: 3
+  hydrogen_acceptor_indices: [3, 4]
+- name: Primary Thioamide
+  smiles: CCC(=S)N
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Secondary Thioamide
+  smiles: CCC(=S)NCC
+  num_hydrogen_donors: 1
+  num_donor_hydrogens: 1
+  hydrogen_donor_indices: [4]
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Tertiary Thioamide
+  smiles: CCC(=S)N(CC)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]
+- name: Aromatic Sulfur
+  smiles: s1cccc1
+- name: Phosphane
+  smiles: P
+- name: Primary Phosphine
+  smiles: CCP
+- name: Secondary Phosphine
+  smiles: CCPCC
+- name: Tertiary Phosphine
+  smiles: CCP(CC)CC
+- name: Phosphorous Acid
+  smiles: CCP(=O)(O)O
+  num_hydrogen_donors: 2
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [4, 5]
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [3, 4, 5]
+- name: Phosphate
+  smiles: CCOP(=O)(O)O
+  num_hydrogen_donors: 2
+  num_donor_hydrogens: 2
+  hydrogen_donor_indices: [5, 6]
+  num_hydrogen_acceptors: 4
+  num_acceptor_lone_pairs: 8
+  hydrogen_acceptor_indices: [2, 4, 5, 6]
+- name: Phosphonate
+  smiles: CCP(=O)(OCC)OCC
+  num_hydrogen_acceptors: 3
+  num_acceptor_lone_pairs: 6
+  hydrogen_acceptor_indices: [3, 4, 7]
+- name: Phosphoryl
+  smiles: CCP(=O)(CC)CC
+  num_hydrogen_acceptors: 1
+  num_acceptor_lone_pairs: 2
+  hydrogen_acceptor_indices: [3]

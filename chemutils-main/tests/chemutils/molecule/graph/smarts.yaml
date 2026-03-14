@@ -1,0 +1,47 @@
+# Single atom match
+- smiles: C
+  smarts: C
+  matches:
+    - 0: 0
+# Single atom in molecule
+- smiles: CCO
+  smarts: C
+  matches:
+    - 0: 0
+    - 0: 1
+# Double bond smarts
+- smiles: CC=C
+  smarts: C=C
+  matches:
+    - 0: 1
+      1: 2
+# Carboxylic acid
+- smiles: CCC(=O)O
+  smarts: '[#6](=[#8])[#8]'
+  matches:
+    - 0: 2
+      1: 3
+      2: 4
+# Alkyl carbon
+- smiles: C=CCC
+  smarts: '[CX4]'
+  matches:
+    - 0: 2
+    - 0: 3
+# Allenic carbon
+- smiles: C=CCC=C=C
+  smarts: '[$([CX2](=C)=C)]'
+  matches:
+    - 0: 4
+# Carbon with double bond, non-allene
+- smiles: C=CCC=C=C
+  smarts: '[$([CX3]=[CX3])]'
+  matches:
+    - 0: 0
+    - 0: 1
+# Carbon with triple bond
+- smiles: C=CC#C
+  smarts: '[$([CX2]#C)]'
+  matches:
+    - 0: 2
+    - 0: 3

@@ -1,0 +1,1460 @@
+oxo_alkene_thia_di_azole:
+  filter_group: oxo_alkene_thia_di_azole
+  filter_smarts:
+    oxo_alkene_thia_di_azole: N1=C[S,NH1]C(=[C,N,P][C,N,O,P])C1(=O)
+  category: red
+Oxobenzothiepine:
+  filter_group: Oxobenzothiepine
+  filter_smarts:
+    Oxobenzothiepine: C1(=O)C=CCSC=C1
+  category: red
+PCP:
+  filter_group: PCP
+  filter_smarts:
+    PCP: PCP
+  category: red
+4_perfluoro_chain:
+  filter_group: 4_perfluoro_chain
+  filter_smarts:
+    c4_perfluoralkyl: C(F)(F)C(F)(F)C(F)(F)C(F)(F)
+  category: red
+2_3_perfluoro_chain:
+  filter_group: 2_3_perfluoro_chain
+  filter_smarts:
+    Fluorinated_Carbon_1: C(C(CF)F)F
+    Fluorinated_Carbon_2: C(C(F)F)(F)F
+  category: amber
+per_halo_chain:
+  filter_group: per_halo_chain
+  filter_smarts:
+    per_halo_chain: '[Cl,Br,I]C-,=;!@C([Cl,Br,I])-,=;!@C([Cl,Br,I])'
+  category: red
+perchloro_cyclopenene:
+  filter_group: perchloro_cyclopenene
+  filter_smarts:
+    perchloro_cp: C1(Cl)(Cl)C(Cl)C(Cl)=C(Cl)C1(Cl)
+  category: red
+peroxide:
+  filter_group: peroxide
+  filter_smarts:
+    peroxide: '[#8]~[#8]'
+  category: red
+phenalen-1-one:
+  filter_group: phenalen-1-one
+  filter_smarts:
+    phenalen-1-one: '[#6]1=[#6]-[#6](=[#8])-[#6]2:[#6]3:[#6]-1:[#6]:[#6]:[#6]:[#6]:3:[#6]:[#6]:[#6]:2'
+  category: red
+phenyl_carbonate:
+  filter_group: phenyl_carbonate
+  filter_smarts:
+    phenyl_carbonate: c1ccccc1OC(=O)O
+  category: amber
+phenyl_ester:
+  filter_group: phenyl_ester
+  filter_smarts:
+    Phenylester: C(=O)!@Oc1ccccc1
+  category: amber
+phos_tyrosine_warhead:
+  filter_group: phos_tyrosine_warhead
+  filter_smarts:
+    phos_tyrosine_warhead: NC(Cc1ccc(OP(O)(O)=O)cc1)C(O)=O
+  category: amber
+phosphoric_acid:
+  filter_group: phosphoric_acid
+  filter_smarts:
+    Phosphoric_acid: '[OH]-P(=O)(-O)-*'
+  category: red
+sulfite:
+  filter_group: sulfite
+  filter_smarts:
+    sulfite: '[C,c]OS(=O)O[C,c]'
+  category: red
+phosphine:
+  filter_group: phosphine
+  filter_smarts:
+    trialkyl_phosphine: '[PX3]([#6])([#6])[#6]'
+    trialkyl_phosphin2: '[PX4](~[!O!S])([#6])([#6])[#6]'
+  category: red
+phosphine_oxide:
+  filter_group: phosphine_oxide
+  filter_smarts:
+    triaryl_phosphine_oxide: P(=O)(a)(a)(a)
+  category: red
+phosphonium:
+  filter_group: phosphonium
+  filter_smarts:
+    phosphonium: '[#15;+]~[!O]'
+  category: red
+phosphonate_ester:
+  filter_group: phosphonate_ester
+  filter_smarts:
+    phosphonate_ester: '[#6]P(=O)(~O)O[#6]'
+  category: red
+phosphoric_ester:
+  filter_group: phosphoric_ester
+  filter_smarts:
+    Phosphoric_ester: COP(=O)(-*)O
+  category: red
+phosphorous_nitrogen_bond:
+  filter_group: phosphorous_nitrogen_bond
+  filter_smarts:
+    phosphorous_nitrogen_bond: '[#15]~[N,n]'
+  category: red
+phosporane:
+  filter_group: phosporane
+  filter_smarts:
+    phosphorane: C=P
+  category: red
+polyene:
+  filter_group: polyene
+  filter_smarts:
+    Polyene: C=!@CC=!@C
+  category: red
+polyhalo_phenol:
+  filter_group: polyhalo_phenol
+  filter_smarts:
+    polyhalo_phenol_a: c1c([O;D1])c(-[Cl,Br,I])c(-[Cl,Br,I])cc1.c1c([O;D1])c(-[Cl,Br,I])c(-[Cl,Br,I])cc1
+    polyhalo_phenol_b: c1c([O;D1])c(-[Cl,Br,I])cc(-[Cl,Br,I])c1.c1c([O;D1])c(-[Cl,Br,I])cc(-[Cl,Br,I])c1
+    polyhalo_phenol_c: c1c([O;D1])ccc(-[Cl,Br,I])c(-[Cl,Br,I])1.c1c([O;D1])ccc(-[Cl,Br,I])c(-[Cl,Br,I])1
+    polyhalo_phenol_d: c(-[Cl,Br,I])1c([O;D1])c(-[Cl,Br,I])ccc1.c(-[Cl,Br,I])1c([O;D1])c(-[Cl,Br,I])ccc1
+  category: amber
+porphyrin:
+  filter_group: porphyrin
+  filter_smarts:
+    porphyrin: '[#6;r16,r17,r18]~[#6]1~[#6]~[#6]~[#6](~[#6])~[#7]1'
+  category: red
+pp_bond:
+  filter_group: pp_bond
+  filter_smarts:
+    phosphorus_phosphorus_bond: P~P
+  category: red
+pyranone:
+  filter_group: pyranone
+  filter_smarts:
+    pyranone: O=C1C=COC=C1
+  category: red
+imidazolium:
+  filter_group: imidazolium
+  filter_smarts:
+    Imidazolium: c1[n+]([#6])ccn1([#6])
+  category: amber
+pyridinium:
+  filter_group: pyridinium
+  filter_smarts:
+    pyridinium: '[n,c&!$([#6](=,-O))]1n([*,H0])[n,c&!$([#6](=,-O))][c,n][c,n][c,n]1'
+  category: amber
+quaternary_nitrogen:
+  filter_group: quaternary_nitrogen
+  filter_smarts:
+    quaternary_nitrogen: '[s,S,c,C,n,N,o,O]~[n+,N+](~[s,S,c,C,n,N,o,O])(~[s,S,c,C,n,N,o,O])~[s,S,c,C,n,N,o,O]'
+  category: amber
+quinone_methide:
+  filter_group: quinone_methide
+  filter_smarts:
+    quinone_methide: '[#6;!$([#6](-[N,O,S]))]1=[#6;!$([#6](-[N,O,S]))][#6](=[#6])[#6;!$([#6](-[N,O,S]))]=[#6;!$([#6](-[N,O,S]))][#6]1(=[O,N,S])'
+  category: red
+quinone-like:
+  filter_group: quinone-like
+  filter_smarts:
+    chinone: C1(=[O,N])C=CC(=[O,N])C=C1
+    dihydroxybenzene: '[OH1]c1ccc([OH1])cc1'
+    disulfonyliminoquinone: S(=O)(=O)N=C1C=CC(=NS(=O)(=O))C=C1
+    Dye_4: c12ccccc1C(=O)c3ccccc3C2=O
+    Dye_7: N=C1[#6]:,=[#6]C(=[C,N])[#6]:,=[#6]1
+    hydroquinone: '[OH]c1ccc([OH,NH2,NH])cc1'
+    ortho_hydroiminoquinone: c1c([N;D1])c([N;D1])c[cH1][cH1]1
+    ortho_hydroquinone: a1c([O,S;D1])c([O,S;D1])a[cH1][cH1]1
+    ortho_quinone: '[CH1,$(C(-[Cl,Br,I]))]1=CC(=[O,N,S;!R])C(=[O,N,S])C=[CH1,$(C(-[Cl,Br,I]))]1'
+    para_hydroiminoquinone: a1[cH1]c([N;D1])[cH1]ac([N;D1])1
+    para_hydroquinone: a1[cH1]c([O,S;D1])[cH1]ac([O,S;D1])1
+    para_quinone: '[CH1,$(C(-[Cl,Br,I]))]1=[CH1,$(C(-[Cl,Br,I]))]C(=[O,N,S])[CH1,$(C(-[Cl,Br,I]))]=[CH1,$(C(-[Cl,Br,I]))]C1(=[O,N,S])'
+    para_quinones: O=C1C=CC(=O)C=C1
+    quinone: '[$([o,n]=c1ccc(=[o,n])cc1),$([O,N]=C1C=CC(=[O,N])C=C1),$([O,N]=C1[#6]:,=[#6]C(=[O,N])[#6]:,=[#6]1)]'
+    quinones: O=[#6]1[#6]:,=[#6][#6](=O)[#6]:,=[#6]1
+    Dye_1: c1cccc(C(=O)[C,c]([#7])=,:[C,c]([#7])C2(=O))c12
+  category: red
+rhodanine:
+  filter_group: rhodanine
+  filter_smarts:
+    rhodanine: C(=C)1SC(=S)NC(=O)1
+  category: red
+Conjugated_Dithioether:
+  filter_group: Conjugated_Dithioether
+  filter_smarts:
+    Conjugated_Dithioether: SC(=[!r])S
+  category: red
+Dithiole-3-thione:
+  filter_group: Dithiole-3-thione
+  filter_smarts:
+    Dithiole-3-thione: S1C=CSC1=C
+  category: red
+methylidene-1_3-dithiole:
+  filter_group: methylidene-1_3-dithiole
+  filter_smarts:
+    methylidene-1_3-dithiole: S1C=CSC1=S
+  category: red
+S-methyl_carbamothioate:
+  filter_group: S-methyl_carbamothioate
+  filter_smarts:
+    S-methyl_carbamothioate: '[#7]=[#6](-[#8])-[#16]-[#6H2]'
+  category: red
+# Changed to amber for sulfonimides
+N_double_bond_S:
+  filter_group: N_double_bond_S
+  filter_smarts:
+    N_double_bond_S: N=!@S
+  category: amber
+trivalent_S_N:
+  filter_group: trivalent_S_N
+  filter_smarts:
+    sulf_D3_nitrogen: '[S;D3](-N)(-[c,C])(-[c,C])'
+  category: red
+saponin:
+  filter_group: saponin
+  filter_smarts:
+    saponin: O1CCCCC1OC2CCC3CCCCC3C2
+  category: red
+silicon:
+  filter_group: silicon
+  filter_smarts:
+    hetero_silyl: '[Si]~[!#6]'
+    triphenyl_silyl: '[Si](c1ccccc1)(c2ccccc2)(c3ccccc3)'
+  category: red
+so_bond:
+  filter_group: so_bond
+  filter_smarts:
+    sulfur_oxygen_single_bond: '[SX2]O'
+  category: red
+squalestatin:
+  filter_group: squalestatin
+  filter_smarts:
+    squalestatin: C12OCCC(O1)CC2
+  category: red
+stillbene:
+  filter_group: stillbene
+  filter_smarts:
+    Dye_25: acC=&!@Cca
+  category: red
+sulfate_ester:
+  filter_group: sulfate_ester
+  filter_smarts:
+    sulfate_ester: COS(=O)(=O)O[C,c]
+  category: red
+sulfinic_acid:
+  filter_group: sulfinic_acid
+  filter_smarts:
+    sulfinic_acid: '[SX3](=O)[O-,OH]'
+  category: red
+sulfonate_ester:
+  filter_group: sulfonate_ester
+  filter_smarts:
+    Sulfonate_Ester: O=[SX4](=O)OC
+  category: red
+sulphonate:
+  filter_group: sulphonate
+  filter_smarts:
+    sulfonate: COS(=O)(=O)[C,c]
+  category: red
+sulfonic_acid:
+  filter_group: sulfonic_acid
+  filter_smarts:
+    Sulfonic_acid: S(=O)(=O)[O-,OH]
+  category: amber
+sulfonium:
+  filter_group: sulfonium
+  filter_smarts:
+    sulfonium_salt: '*[SX3](*)*'
+  category: red
+sulfonyl_anhydride:
+  filter_group: sulfonyl_anhydride
+  filter_smarts:
+    sulfonyl_anhydride: '[$(C(=O)),$(S(=O)(=O))][O,S](S(=O)(=O))'
+  category: red
+Sulphur_Nitrogen_single_bond:
+  filter_group: Sulphur_Nitrogen_single_bond
+  filter_smarts:
+    acyclic_N-S: N!@[SX2]
+    N-S_(not_sulfonamides): '[#6][S!$(S(~[OD1])~[OD1])][N;H0]'
+  category: red
+terminal_vinyl:
+  filter_group: terminal_vinyl
+  filter_smarts:
+    terminal_vinyl: '[CH2D1]=[CD2]-!@*'
+  category: amber
+thiatetrazolidine:
+  filter_group: thiatetrazolidine
+  filter_smarts:
+    thiatetrazolidine: '[$(Sc1nnn[nH,n-]1),$(Sc1nn[nH,n-]n1)]'
+  category: red
+thiazolidine:
+  filter_group: thiazolidine
+  filter_smarts:
+    1,3-thiazolidine: '[#6]1-[#6]-[#7]-[#6]-[#16]-1'
+  category: red
+thiazolidinone:
+  filter_group: thiazolidinone
+  filter_smarts:
+    Thiazolidinone: O=C1CSCN1
+  category: red
+thio_carbonate:
+  filter_group: thio_carbonate
+  filter_smarts:
+    thio_carbonate: '[$(SC(=[O,S])[O,S]),$([S,O]C(=S)[O,S])]'
+  category: red
+thio_hydroxamate:
+  filter_group: thio_hydroxamate
+  filter_smarts:
+    thio_hydroxamate: '[S;D2]([$(N(=C)),$(N(-S(=O)(=O))),$(N(-C(=O)))])'
+  category: red
+thio_oxopyrylium_salt:
+  filter_group: thio_oxopyrylium_salt
+  filter_smarts:
+    thio_oxopyrylium_salt: c1ccc[s,o;X2]c1
+  category: red
+thiobenzothiazole:
+  filter_group: thiobenzothiazole
+  filter_smarts:
+    thiobenzothiazole: c12ccccc1(SC(=S)N2)
+    Thiobenzothiazole: c12ccccc1(SC(S)=N2)
+  category: red
+Thiocarbonyl_group:
+  filter_group: Thiocarbonyl_group
+  filter_smarts:
+    Thiocarbonyl_group: C=S
+  category: red
+thioester:
+  filter_group: thioester
+  filter_smarts:
+    thioester: SC=O
+  category: red
+thiol:
+  filter_group: thiol
+  filter_smarts:
+    thiol: '[S-]'
+  category: red
+sulfoxide:
+  filter_group: sulfoxide
+  filter_smarts:
+    thionyl: '[Sv4](=O)(-!@[!#1])-!@[!#1]'
+  category: amber
+phosphore_halide_sulfur:
+  filter_group: phosphore_halide_sulfur
+  filter_smarts:
+    phosphor_halide_and_P_S_bond: '[#15]~[F,Cl,Br,I,#16]'
+  category: red
+thiopyrylium:
+  filter_group: thiopyrylium
+  filter_smarts:
+    thiopyrylium: c1[S,s;+]cccc1
+  category: red
+thiourea:
+  filter_group: thiourea
+  filter_smarts:
+    thiourea: '[#16]=[#6](-[#7])-[#7]'
+  category: red
+thioxanthate:
+  filter_group: thioxanthate
+  filter_smarts:
+    thio_xanthate: '[S;!R]-[C;!R](=[S;!R])(-[S;!R])'
+  category: red
+three_membered_heterocycle:
+  filter_group: three_membered_heterocycle
+  filter_smarts:
+    Three-membered_heterocycle: '*1[O,S,N]*1'
+  category: red
+triamide:
+  filter_group: triamide
+  filter_smarts:
+    triamide: '[$(N(-C(=O))(-C(=O))(-C(=O))),$(n([#6](=O))([#6](=O))([#6](=O)))]'
+  category: red
+triazo:
+  filter_group: triazo
+  filter_smarts:
+    azo_filter2: '[N;!$(N-S(=O)(=O));!$(N-C=O)]-[N;!r3;!$(N-S(=O)(=O));!$(N-C=O)]-[N;!$(N-S(=O)(=O));!$(N-C=O)]'
+    azo_filter3: '[N;!R]-[N;!R]-[N;!R]'
+  category: red
+triflate:
+  filter_group: triflate
+  filter_smarts:
+    triflate: OS(=O)(=O)(C(F)(F)(F))
+  category: red
+trifluoromethyl_ketone:
+  filter_group: trifluoromethyl_ketone
+  filter_smarts:
+    trifluoromethyl_ketone: '[$(C(=O));!$(C-N);!$(C-O);!$(C-S)]C(F)(F)(F)'
+  category: red
+trihalovinyl_heteroatom:
+  filter_group: trihalovinyl_heteroatom
+  filter_smarts:
+    trihalovinyl_heteroatom: C(-[Cl,Br,I])(-[Cl,Br,I])=C(-[Cl,Br,I])(-[N,O,S])
+  category: red
+trihydroxyphenyl:
+  filter_group: trihydroxyphenyl
+  filter_smarts:
+    2_3_4trihydroxyphenyl: c([OH])c([OH])c([OH])
+    2_4_5trihydroxyphenyl: c([OH])c([OH])cc([OH])
+    benzene-1,2,4-triol: '[#6]1(:[#6]:[#6](:[#6]:[#6]:[#6]:1-[#8])-[#8])-[#8]'
+    polyphenol1: Oc1cc(O)cc(O)c1
+    polyphenol2: Oc1c(O)cc(O)cc1
+  category: red
+
+# Redundant to alkyne
+# triple_bond:
+#   filter_group: triple_bond
+#   filter_smarts:
+#     activated_acetylene: '[$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O))]C#[C;!$(C-N);!$(C-n)]'
+#     alkyne: C#C
+#   category: amber
+
+Diacetylene:
+  filter_group: Diacetylene
+  filter_smarts:
+    Diacetylene: C#CC#C
+  category: red
+Enyne:
+  filter_group: Enyne
+  filter_smarts:
+    Enyne: C=!@CC#C
+  category: red
+Ynone:
+  filter_group: Ynone
+  filter_smarts:
+    michael_acceptor_sp1: C#CC=O
+  category: amber
+trisub_bis_act_olefin:
+  filter_group: trisub_bis_act_olefin
+  filter_smarts:
+    trisub_bis_act_olefin: '[CH;!R;!$(C-N)]=C([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O))])([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O))])'
+  category: amber
+tropone:
+  filter_group: tropone
+  filter_smarts:
+    tropone: C1C(=O)C=CC=CC=1
+  category: red
+Unbranched_chain:
+  filter_group: Unbranched_chain
+  filter_smarts:
+    Unbranched_chain: '[$([A&D2]),$([A&D1])]!@[A&D2]!@[A&D2]!@[A&D2]!@[A&D2]!@[$([A&D2]),$([A&D1])]'
+  category: amber
+vinyl_halide:
+  filter_group: vinyl_halide
+  filter_smarts:
+    Vinyl_Halide: '[Cl,Br,I]C=[C,!R]'
+  category: red
+di_tri_phosphate:
+  filter_group: di_tri_phosphate
+  filter_smarts:
+    di/triphosphate: P(=O)([OH])OP(=O)[OH]
+  category: red
+Diamino benzene:
+  filter_group: Diamino benzene
+  filter_smarts:
+    diaminobenzene: '[cR2]1[cR2]c([N+0X3R0,nX3R0])[cR2][cR2]c1([N+0X3R0,nX3R0])'
+  category: amber
+Diamino sulfide:
+  filter_group: Diamino sulfide
+  filter_smarts:
+    diamino_sulfide: '[N,n]~[S;!R;D2]~[N,n]'
+  category: red
+N_triple_N:
+  filter_group: N_triple_N
+  filter_smarts:
+    Azo_group: N#N
+  category: red
+diazo:
+  filter_group: diazo
+  filter_smarts:
+    diazo: '[#7]=&!@[#7]'
+  category: red
+dicarbonyl_sulfonamide:
+  filter_group: dicarbonyl_sulfonamide
+  filter_smarts:
+    dicarbonyl_sulfonamide: '[$(N(-C(=O))(-C(=O))(-S(=O))),$(n([#6](=O))([#6](=O))([#16](=O)))]'
+  category: red
+disulfide:
+  filter_group: disulfide
+  filter_smarts:
+    disulfide: '[#16]~[#16]'
+  category: red
+Dithiocarbamate:
+  filter_group: Dithiocarbamate
+  filter_smarts:
+    Dithiocarbamate: NC(=S)S
+  category: red
+Dithiole-2-thione:
+  filter_group: Dithiole-2-thione
+  filter_smarts:
+    Dithiole-2-thione: S1SC=CC1=S
+  category: red
+Dithiomethylene_acetal:
+  filter_group: Dithiomethylene_acetal
+  filter_smarts:
+    Dithiomethylene_acetal: S[C;!$(C=*)]S
+  category: red
+3-suphonamide_aniline:
+  filter_group: 3-suphonamide_aniline
+  filter_smarts:
+    Dye_22: NS(=O)(=O)c1cccc([#7])c1
+  category: amber
+N_phenyl_tetrazole:
+  filter_group: N_phenyl_tetrazole
+  filter_smarts:
+    Dye_26: c1ccccc1-n2nnnc2[CH2]*
+  category: amber
+2_free_phosphate_groups:
+  filter_group: 2_free_phosphate_groups
+  filter_smarts:
+    gte_2_free_phos: P([O;D1])=O.P([O;D1])=O
+  category: red
+2_quaternary_nitrogens:
+  filter_group: 2_quaternary_nitrogens
+  filter_smarts:
+    gte_2_N_quats: '[N,n;H0;+;!$(N~O);!$(n~O)].[N,n;H0;+;!$(N~O);!$(n~O)]'
+  category: red
+3_carboxylic_acid_groups:
+  filter_group: 3_carboxylic_acid_groups
+  filter_smarts:
+    gte_3_COOH: C(=O)[O;D1].C(=O)[O;D1].C(=O)[O;D1]
+  category: red
+3_iodines:
+  filter_group: 3_iodines
+  filter_smarts:
+    gte_3_iodine: '[#53].[#53].[#53]'
+  category: red
+4_basic_nitrogen:
+  filter_group: 4_basic_nitrogen
+  filter_smarts:
+    gte_4_basic_N: '[N;!$(N(=[N,O,S,C]));!$(N(S(=O)(=O)));!$(N(C(F)(F)(F)));!$(N(C#N));!$(N(C(=O)));!$(N(C(=S)));!$(N(C(=N)));!$(N(#C));!$(N-c)].[N;!$(N(=[N,O,S,C]));!$(N(S(=O)(=O)));!$(N(C(F)(F)(F)));!$(N(C#N));!$(N(C(=O)));!$(N(C(=S)));!$(N(C(=N)));!$(N(#C));!$(N-c)].[N;!$(N(=[N,O,S,C]));!$(N(S(=O)(=O)));!$(N(C(F)(F)(F)));!$(N(C#N));!$(N(C(=O)));!$(N(C(=S)));!$(N(C(=N)));!$(N(#C));!$(N-c)].[N;!$(N(=[N,O,S,C]));!$(N(S(=O)(=O)));!$(N(C(F)(F)(F)));!$(N(C#N));!$(N(C(=O)));!$(N(C(=S)));!$(N(C(=N)));!$(N(#C));!$(N-c)]'
+  category: red
+2_nitro_groups:
+  filter_group: 2_nitro_groups
+  filter_smarts:
+    gte_4_nitro: '[$([N+](=O)[O-]),$(N(=O)=O)].[$([N+](=O)[O-]),$(N(=O)=O)]'
+  category: red
+3_aliphatic_OH:
+  filter_group: 3_aliphatic_OH
+  filter_smarts:
+    gte_7_aliphatic_OH: '[C;!$(C=O)][OH].[C;!$(C=O)][OH].[C;!$(C=O)][OH]'
+  category: red
+2_halogens_not_fluorine:
+  filter_group: 2_halogens_not_fluorine
+  filter_smarts:
+    gte_7_total_hal: '[Cl,Br,I].[Cl,Br,I]'
+  category: amber
+NSO_hetero_hetero_not_ring:
+  filter_group: NSO_hetero_hetero_not_ring
+  filter_smarts:
+    Hetero_hetero: '*[N,S,O;!$(S=*)]-&!@[N,S,O;!$(S=*)]'
+  category: red
+dye_32:
+  filter_group: dye_32
+  filter_smarts:
+    Dye_32: c1cccc2C(=O)C(C:,=*)C(=O)c12
+  category: red
+thioaminal:
+  filter_group: thioaminal
+  filter_smarts:
+    NCS: '[#7;!n][C;!$(C(=[O,N])[N,O])][#16;!s;!$(S(=O))]'
+  category: red
+dye_6:
+  filter_group: dye_6
+  filter_smarts:
+    Dye_6: c12cccc(C(=O)C(ca)C(=O)3)c2c3ccc1
+  category: red
+pentasubstituted_aromatic:
+  filter_group: pentasubstituted_aromatic
+  filter_smarts:
+    poly_sub_atomatic: '*!@c1[c;H0](!@*)[c;H0](!@*)[c;H0](!@*)[cH0](!@*)[c;H0]1'
+  category: amber
+Si_B_Se_atoms:
+  filter_group: Si_B_Se_atoms
+  filter_smarts:
+    Si_B_Se_atoms: '[Si,B,Se]'
+  category: red
+Dye_9:
+  filter_group: Dye_9
+  filter_smarts:
+    Dye_9: ac-*=&!@*-&!@C(=O)-&!@ca
+  category: red
+enamine:
+  filter_group: enamine
+  filter_smarts:
+    AlkylEnamine: '[C;H1$(C([#6;!$(C=O)])),H0$(C([#6;!$(C=O)])[#6;!$(C=O)])]=[CH1]!@N([#6;!$(C(=O))])[#6;!$(C(=O))]'
+  category: red
+ester_of_hobt:
+  filter_group: ester_of_hobt
+  filter_smarts:
+    HOBT_ester: O=C(-[!N])O[$(nnn),$([#7]-[#7]=[#7])]
+  category: red
+phosphor_atom:
+  filter_group: phosphor_atom
+  filter_smarts:
+    phosphor: P
+  category: amber
+flavanoid:
+  filter_group: flavanoid
+  filter_smarts:
+    flavanoid: O=C2CC(a3aaaaa3)Oa1aaaaa12
+  category: red
+flavin:
+  filter_group: flavin
+  filter_smarts:
+    Flavin: c1cccc(NC(=NC(=[N,S,O])NC(=O)3)C3=N2)c12
+  category: red
+Fluorescein:
+  filter_group: Fluorescein
+  filter_smarts:
+    Fluorescein: c1cc(O)cc(OC(=CC(=O)C=C3)C3=C2)c12
+  category: red
+formate_formide:
+  filter_group: formate_formide
+  filter_smarts:
+    formate_formide: O=[CH][O,N][#6]
+  category: red
+formylformimidoyl-chloride:
+  filter_group: formylformimidoyl-chloride
+  filter_smarts:
+    formylformimidoyl-chloride: '[#8]=[#6]/[#7]=[#6]/[#17]'
+  category: red
+geminal_dinitriles:
+  filter_group: geminal_dinitriles
+  filter_smarts:
+    AlkylCN2: '*(C#N)C#N'
+  category: red
+halo_carbonyl:
+  filter_group: halo_carbonyl
+  filter_smarts:
+    alpha_halo_carbonyl: O=[C,S]-C-[F,Cl,Br,I]
+  category: amber
+halo_ketone_sulfone:
+  filter_group: halo_ketone_sulfone
+  filter_smarts:
+    halo_ketone_sulfone: '[#6][C,S](=[O,S])C[Cl,Br,I]'
+  category: red
+monofluoroacetate:
+  filter_group: monofluoroacetate
+  filter_smarts:
+    monofluoroacetate: '[C;H2](F)C(=O)[O,N,S]'
+  category: red
+trifluoroacetate_ester:
+  filter_group: trifluoroacetate_ester
+  filter_smarts:
+    trifluoroacetate_ester: C(F)(F)(F)C(=O)O
+  category: red
+halo_imino:
+  filter_group: halo_imino
+  filter_smarts:
+    halo_imino: C(=[#7])([Cl,Br,I,$(O(S(=O)(=O)))])
+  category: red
+
+# Removed as redundant with halo-carbonyl nand alkylating agents
+# halo_or_sulfate_alkene:
+#   filter_group: halo_or_sulfate_alkene
+#   filter_smarts:
+#     halo_olefin_bis_EWG: C([Cl,Br,I,$(O(S(=O)(=O)))])=C([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C=O)])([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C=O)])
+#     secondary_halide_sulfate: '[CH;!$(C=C)][Cl,Br,I,$(O(S(=O)(=O)[!$(N);!$([O&D1])]))]'
+
+  category: red
+halo_phenolic_sulfonyl:
+  filter_group: halo_phenolic_sulfonyl
+  filter_smarts:
+    halo_phenolic_sulfonyl: S(=O)Oc1c([Cl,F])[cH1,$(c[F,Cl])]c([F,Cl])[cH1,$(c[F,Cl])]c1([F,Cl])
+  category: red
+halogen_heteroatom:
+  filter_group: halogen_heteroatom
+  filter_smarts:
+    halogen_heteroatom: '[!C;!c;!H;!P;!S][F,Cl,Br,I]'
+  category: red
+P_or_S_Halides:
+  filter_group: P_or_S_Halides
+  filter_smarts:
+    P_or_S_Halides: '[P,S;!$(S=O)][Cl,Br,F,I]'
+  category: red
+tri_halogenated_ring:
+  filter_group: tri_halogenated_ring
+  filter_smarts:
+    halogenated_ring: c1ccc([Cl,Br,I])c([Cl,Br,I])c1[Cl,Br,I]
+  category: red
+penta_halogenated_ring:
+  filter_group: penta_halogenated_ring
+  filter_smarts:
+    pentahalophenyl: c1c([F,Cl])c([F,Cl])c([F,Cl])c([F,Cl])c1([F,Cl])
+  category: red
+perhalo_dicarbonyl_phenyl:
+  filter_group: perhalo_dicarbonyl_phenyl
+  filter_smarts:
+    perhalo_dicarbonyl_phenyl: c1(C=O)c([Br,Cl,I])c([Br,Cl,I])c([Br,Cl,I])c([Br,Cl,I])c1(C=O)
+  category: red
+acetyl_urea:
+  filter_group: acetyl_urea
+  filter_smarts:
+    acetyl_urea: C(=O)!@N!@C(=O)[#7]
+  category: red
+aminal:
+  filter_group: aminal
+  filter_smarts:
+    aminal: '[#7]-&!@[#6&!H0&!H1]-&!@[#7]'
+  category: red
+glycol:
+  filter_group: glycol
+  filter_smarts:
+    glycol: '[#6][O;R0][$(C([#6])[#6]),$([CH][#6]),$([CH2])][O;R0][#6]'
+  category: amber
+hemiacetal:
+  filter_group: hemiacetal
+  filter_smarts:
+    hemiacetal: '[#6]-O[CH1](-[#6])[OH1]'
+  category: red
+hemiaminal:
+  filter_group: hemiaminal
+  filter_smarts:
+    hemiaminal: '[#7;!n][C;!$(C(=[O,N])[N,O])][#8;!o]'
+  category: red
+ketal:
+  filter_group: ketal
+  filter_smarts:
+    ketal: '[#6&!H0](-&!@[#8])-&!@[#8]'
+  category: amber
+S_C_het:
+  filter_group: S_C_het
+  filter_smarts:
+    non_ring_acetal: '[O,N,S;!$(S~O)]!@[C;H1;X4]!@[S;!$(S~O)]'
+    non_ring_CH2O_acetal: '[O,N,S;!$(S~O)]!@[CH2]!@[S;!$(S~O)]'
+    non_ring_ketal: '[O,N,S;!$(S~O)]!@[C;H0;X4](!@[S;!$(S~O)])(C)'
+  category: red
+hetero_cyanates:
+  filter_group: hetero_cyanates
+  filter_smarts:
+    cyanate_/aminonitrile_/thiocyanate: '[N,O,S]C#N'
+  category: red
+hydantoin:
+  filter_group: hydantoin
+  filter_smarts:
+    hydantoin: C1NC(=O)NC(=O)1
+  category: amber
+hydrazine:
+  filter_group: hydrazine
+  filter_smarts:
+    hydrazine: '[#7;!a]-[#7]'
+  category: red
+hydroxamic_acid:
+  filter_group: hydroxamic_acid
+  filter_smarts:
+    hydroxamate_warhead: C([N;H1]([O;D1]))=O
+  category: amber
+hydroxylamine:
+  filter_group: hydroxylamine
+  filter_smarts:
+    hydroxylamine: '[*!$(C=O)]!@N!@[$([OX2])]'
+  category: red
+N-hydroxyl_pyridine:
+  filter_group: N-hydroxyl_pyridine
+  filter_smarts:
+    N-hydroxyl_pyridine: n[OH]
+  category: red
+Nitrosone_not_nitro:
+  filter_group: Nitrosone_not_nitro
+  filter_smarts:
+    Nitrosone_not_nitro: '[$(N(~!@[#6])!@O);!$([#7](~O)~O)]'
+  category: red
+
+# This one catches non-hyperval compounds so removing
+# hyperval_sulfur:
+#   filter_group: hyperval_sulfur
+#   filter_smarts:
+#     hyperval_sulfur: '[$([#16&D3]),$([#16&D4])]=,:[#6]'
+#   category: red
+
+hypervalent_halogen:
+  filter_group: hypervalent_halogen
+  filter_smarts:
+    halogen: '[FX2,ClX2,BrX2,IX2,IX3,IX4,IX5]'
+  category: red
+hypervalent_heteroatom:
+  filter_group: hypervalent_heteroatom
+  filter_smarts:
+    Quaternary_C__Cl__I__P_or_S: '[C+,Cl+,I+,P+,S+]'
+  category: red
+halo-imide:
+  filter_group: halo-imide
+  filter_smarts:
+    react_imide: '*C([F,Cl,Br,I,$(OS(=O)(=O)*)])=[NX2]*'
+  category: red
+imine:
+  filter_group: imine
+  filter_smarts:
+    acyclic_C=N-H: '[NH1X2]=[C!R;!$(C(-N)(=[NH1])-N)]'
+    acyclic_imines: '[$([CX3R0]([#6])[#6]),$([CX3HR0][#6])]=[$([NX2R0][#6]),$([NX2HR0])]'
+  category: amber
+imide:
+  filter_group: imide
+  filter_smarts:
+    imine: N=[CR0][N,n,O,S]
+  category: red
+indacene:
+  filter_group: indacene
+  filter_smarts:
+    3,5a-dihydro-as-indacene: '[#6]12=[#6](-[#6]3=[#6]-[#6]=[#6]-[#6]-3-[#6]=[#6]-1)-[#6]=[#6]-[#6]-2'
+    Unknown: '[#6]1=[#6]-[#6]2-[#6](=[#6]-[#6]3=[#6]-2-[#6]=[#6]-[#6]-3)-[#6]=[#6]-1'
+  category: red
+isonitrile:
+  filter_group: isonitrile
+  filter_smarts:
+    isonitrile: '[N+]#[C-]'
+  category: red
+isotopes:
+  filter_group: isotopes
+  filter_smarts:
+    deuterium: '[2H]'
+    isotope: '[3#1,13C,14C,15N,125I,23F,22Na,32P,33P,35S,45Ca,57Co,103Ru,141Ce]'
+  category: red
+ketene:
+  filter_group: ketene
+  filter_smarts:
+    ketene: C=C=O
+  category: red
+ketone:
+  filter_group: ketone
+  filter_smarts:
+    Ketone: '[#6]-C(=O)-[#6]'
+  category: amber
+maleimide:
+  filter_group: maleimide
+  filter_smarts:
+    maleimide_etc: '[$([C;H1]),$(C(-[F,Cl,Br,I]))]1=[$([C;H1]),$(C(-[F,Cl,Br,I]))]C(=O)[N,O,S]C(=O)1'
+  category: amber
+meldrums_acid_deriv:
+  filter_group: meldrums_acid_deriv
+  filter_smarts:
+    meldrums_acid_deriv: O=C1OC(C)(C)OC(C1)=O
+  category: red
+metal:
+  filter_group: metal
+  filter_smarts:
+    contains_metal: '[$([Ru]),$([Rh]),$([#34]),$([Pd]),$([Sc]),$([Bi]),$([Sb]),$([Ag]),$([Ti]),$([Al]),$([Cd]),$([V]),$([In]),$([Cr]),$([Sn]),$([Mn]),$([La]),$([Fe]),$([Er]),$([Tm]),$([Yb]),$([Lu]),$([Hf]),$([Ta]),$([W]),$([Re]),$([Co]),$([Os]),$([Ni]),$([Ir]),$([Cu]),$([Zn]),$([Ga]),$([Ge]),$([#33]),$([Y]),$([Zr]),$([Nb]),$([Ce]),$([Pr]),$([Nd]),$([Sm]),$([Eu]),$([Gd]),$([Tb]),$([Dy]),$([Ho]),$([Pt]),$([Au]),$([Hg]),$([Tl]),$([Pb]),$([Ac]),$([Th]),$([Pa]),$([Mo]),$([U]),$([Tc]),$([Te]),$([Po]),$([At]),$([Hg,Fe,As,Sb,Zn,Te]),$([#3,#11,#12,#13,#19,#20,#26,#27,#28,#29,#30])]'
+  category: red
+grignard:
+  filter_group: grignard
+  filter_smarts:
+    grignard: C[Mg][F,Cl,Br,I]
+  category: red
+2,3-dihydrothiophene_1,1-dioxide:
+  filter_group: 2,3-dihydrothiophene_1,1-dioxide
+  filter_smarts:
+    2,3-dihydrothiophene_1,1-dioxide: '[#6]1=[#6]-[#6]-[#6]-[#16]-1(=[#8])=[#8]'
+  category: red
+acrylamide:
+  filter_group: acrylamide
+  filter_smarts:
+    acrylamide: '[#6]=&!@[#6&!H0]-&!@[#6](=[#8])-&!@[#7]'
+  category: amber
+michael_acceptor:
+  filter_group: michael_acceptor
+  filter_smarts:
+    acrylate: '[CH2]=[C;!$(C-N);!$(C-O)]C(=O)'
+  category: red
+alkynyl_carbonyl_michael_acceptor:
+  filter_group: alkynyl_carbonyl_michael_acceptor
+  filter_smarts:
+    alkynyl_michael_acceptor1: '[$([CH1]),$(C[#6])]#CC(=O)[#6,#7,#8]'
+  category: red
+alpha_beta-unsaturated_EWG:
+  filter_group: alpha_beta-unsaturated_EWG
+  filter_smarts:
+    alpha_beta-unsaturated_ketones;_center_of_Michael_reactivity: '[$(C#N),$(N(~O)~O),$(C=O),$(S(=O)=O),$(C(F)(F)F),Cl][C!H0]=[C!H0]'
+  category: red
+alkynl_sulfone:
+  filter_group: alkynl_sulfone
+  filter_smarts:
+    Michael_acceptor: '[$([CH]),$(CC)]#CS(=O)(=O)[C,c]'
+  category: red
+monensin:
+  filter_group: monensin
+  filter_smarts:
+    monensin: O1CCCCC1C2CCCO2
+  category: amber
+anthracene:
+  filter_group: anthracene
+  filter_smarts:
+    (poly(azo(anthracene)): c12:[c,n]:[c,n]:[c,n]:[c,n]:c1[c,n]c3:[c,n]:[c,n]:[c,n]:[c,n]:c3[c,n]2
+  category: red
+phenanthrene:
+  filter_group: phenanthrene
+  filter_smarts:
+    (poly(azo(phenanthrene)): c12:[c,n]:[c,n]:[c,n]:[c,n]:c1:[c,n]:[c,n]:c3:[c,n]:[c,n]:[c,n]:[c,n]:c23
+  category: red
+branched_polycyclic_aromatic:
+  filter_group: branched_polycyclic_aromatic
+  filter_smarts:
+    branched_polycyclic_aromatic: a1(a2aa(a3aaaaa3)aa(a4aaaaa4)a2)aaaaa1
+  category: red
+flourene_like:
+  filter_group: flourene_like
+  filter_smarts:
+    multiple_aromatic_rings: '[!#1]-,:1-:a2a(-:[!#1]:3:a1aaaa3)aaaa2'
+  category: red
+mustard:
+  filter_group: mustard
+  filter_smarts:
+    mustards: '[N,S,O][CH2][CH2]-[F,Cl,Br,I]'
+    nitrogen_mustard: '[N,P,Se,S][C!H0]C[Br,Cl,I]'
+  category: red
+acyl_123_triazole:
+  filter_group: acyl_123_triazole
+  filter_smarts:
+    acyl_123_triazole: '[#7;R1]1~[#7;R1]~[#7;R1](-C(=O))~[#6]~[#6]1'
+  category: red
+acyl_134_triazole:
+  filter_group: acyl_134_triazole
+  filter_smarts:
+    acyl_134_triazole: '[#7]1~[#7]~[#6]~[#7](-C(=O)[!N])~[#6]1'
+  category: amber
+acyl_imidazole:
+  filter_group: acyl_imidazole
+  filter_smarts:
+    acyl_imidazole: '[C;!$(C-N)](=O)[#7]1[#6;H1,$([#6]([*;!R]))][#7][#6;H1,$([#6]([*;!R]))][#6;H1,$([#6]([*;!R]))]1'
+  category: amber
+acyl_pyrazole:
+  filter_group: acyl_pyrazole
+  filter_smarts:
+    acyl_pyrazole: '[C;!$(C-N)](=O)[#7]1[#7][#6;H1,$([#6]([*;!R]))][#6;H1,$([#6]([*;!R]))][#6;H1,$([#6]([*;!R]))]1'
+  category: amber
+amidotetrazole:
+  filter_group: amidotetrazole
+  filter_smarts:
+    amidotetrazole: c1nnnn1C=O
+  category: amber
+N_oxide:
+  filter_group: N_oxide
+  filter_smarts:
+    N_oxide: '[NX2,nX3][OX1]'
+  category: amber
+N-acyl-2-amino-5-mercapto-1_3_4-thiadiazole:
+  filter_group: N-acyl-2-amino-5-mercapto-1_3_4-thiadiazole
+  filter_smarts:
+    N-acyl-2-amino-5-mercapto-1_3_4-thiadiazole: s1c(S)nnc1NC=O
+  category: red
+alpha_halo_amine:
+  filter_group: alpha_halo_amine
+  filter_smarts:
+    alpha_halo_amine: '[Cl,Br,I,$(O(S(=O)(=O)))]-[CH,CH2;!$(C(F)F)]-[N,n]'
+  category: red
+cyanamide:
+  filter_group: cyanamide
+  filter_smarts:
+    cyanamide: N[CH2]C#N
+  category: amber
+nitrate:
+  filter_group: nitrate
+  filter_smarts:
+    nitrate: '[#6]-O-[N+](=O)[O-]'
+  category: red
+nitro_group:
+  filter_group: nitro_group
+  filter_smarts:
+    alkyl_NO2: 'CN(~O)(~O)'
+    aromatic_NO2: O~N(=O)-c(:*):*
+  category: amber
+para-nitroaniline:
+  filter_group: para-nitroaniline
+  filter_smarts:
+    Dye_29: O=[N+](-[O-])-caac-[$(N(C)C),$([NH]C),$([NH2])]
+  category: red
+Nitrobenz-azadiazole_1:
+  filter_group: Nitrobenz-azadiazole_1
+  filter_smarts:
+    Nitrobenz-azadiazole_1: c1ccc(n[o,s]n2)c2c1[N+](=O)[O-]
+  category: red
+Nitrobenz-azadiazole_2:
+  filter_group: Nitrobenz-azadiazole_2
+  filter_smarts:
+    Nitrobenz-azadiazole_2: c1c([N+](=O)[O-])cc(n[o,s]n2)c2c1
+  category: red
+nitrone:
+  filter_group: nitrone
+  filter_smarts:
+    nitrone: '[C;!R]=[N+][O;D1]'
+  category: red
+ortho_nitrophenyl_ester:
+  filter_group: ortho_nitrophenyl_ester
+  filter_smarts:
+    ortho_nitrophenyl_carbonyl: '[#6]1(-O-[C;!R](=[O,N;!R]))[#6]([$(N(=O)(=O)),$([N+](=O)[O-])])[#6][#6][#6][#6]1'
+  category: red
+para_nitrophenyl_ester:
+  filter_group: para_nitrophenyl_ester
+  filter_smarts:
+    para_nitrophenyl_ester: '[#6]1(-O(-[C;!R](-[!N])(=[O,N;!R])))[#6][#6][#6]([$(N(=O)(=O)),$([N+](=O)[O-])])[#6][#6]1'
+  category: red
+acyclic_N_oxide:
+  filter_group: acyclic_N_oxide
+  filter_smarts:
+    acyclic_NO_not_nitro: O-!@[N;!$(N(=O)=O);!$([N+](=O)[O-])]
+  category: red
+nitroso:
+  filter_group: nitroso
+  filter_smarts:
+    nitroso: '[N&D2](=O)'
+  category: red
+NO_phosphonate:
+  filter_group: NO_phosphonate
+  filter_smarts:
+    NO_phosphonate: P(=O)ON
+  category: red
+o-tertbutylphenol:
+  filter_group: o-tertbutylphenol
+  filter_smarts:
+    o-tertbutylphenol: c1c([OH1])c(C(C)(C)C)ccc1
+  category: amber
+orthoester:
+  filter_group: orthoester
+  filter_smarts:
+    Orthoester: C(O)(O)[OH]
+  category: red
+oxepine:
+  filter_group: oxepine
+  filter_smarts:
+    oxepine: O1C=CC=CC=C1
+  category: amber
+hydroxyimide_ester:
+  filter_group: hydroxyimide_ester
+  filter_smarts:
+    hydroxyimide_ester: O=C[NX3](C=O)OC(=O)*
+  category: red
+oxime_ester:
+  filter_group: oxime_ester
+  filter_smarts:
+    oxime: '[C,c]=NOC=O'
+  category: red
+oxime:
+  filter_group: oxime
+  filter_smarts:
+    Oxime: '[#6]C(=!@N[$(OC),$([OH])])[#6]'
+  category: amber
+1,3-dioxolan-2-one:
+  filter_group: 1,3-dioxolan-2-one
+  filter_smarts:
+    1,3-dioxolan-2-one: '[#8]1-[#6]-[#6]-[#8]-[#6]-1=[#8]'
+  category: amber
+2_2-dimethyl-4_5-dicarboxy-dithiole:
+  filter_group: 2_2-dimethyl-4_5-dicarboxy-dithiole
+  filter_smarts:
+    2_2-dimethyl-4_5-dicarboxy-dithiole: C1(C)(C)SC(C(=O)O)=C(C(=O)O)S1
+  category: red
+2_3_dihydroxybromobenzene:
+  filter_group: 2_3_dihydroxybromobenzene
+  filter_smarts:
+    3-bromobenzene-1,2-diol: '[#6]1:[#6]:[#6](:[#6](:[#6](:[#6]:1)-[#35])-[#8])-[#8]'
+  category: red
+2_halo_ether:
+  filter_group: 2_halo_ether
+  filter_smarts:
+    2_halo_ether: '[Cl,Br,I][CX4][CX4][$([O,S,N])]'
+  category: red
+2_or_4_halo_heterocycle:
+  filter_group: 2_or_4_halo_heterocycle
+  filter_smarts:
+    2-halopyridine: '[F,Cl,Br][c]1:[c,n]:[c,n]:[c,n]:[c,n]:[n]1'
+    4-halopyridine: '[F,Cl,Br][c]1:[c,n]:[c,n]:[n]:[c,n]:[c,n]1'
+  category: amber
+halo_5heterocycle_bis_EWG:
+  filter_group: halo_5heterocycle_bis_EWG
+  filter_smarts:
+    halo_5heterocycle_bis_EWG: '[#7,#8,#16]1[#6]([$(S(=O)(=O)),$([F,Cl]),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O))])[#6]([$(S(=O)(=O)),$([F,Cl]),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O))])[#7][#6]1([Cl,Br,I])'
+  category: amber
+2-chloro-5-methylthiophene:
+  filter_group: 2-chloro-5-methylthiophene
+  filter_smarts:
+    2-chloro-5-methylthiophene: '[#6]1:[#6](:[#16]:[#6](:[#6]:1)-[#6])-[#17]'
+  category: red
+2-methylsulfanyl-4,5-dihydro-1,3-thiazole:
+  filter_group: 2-methylsulfanyl-4,5-dihydro-1,3-thiazole
+  filter_smarts:
+    2-methylsulfanyl-4,5-dihydro-1,3-thiazole: '[#6]1-[#6]-[#7]=[#6](-[#16]-1)-[#16]-[#6]'
+  category: amber
+2-methylsulfonylthiophene:
+  filter_group: 2-methylsulfonylthiophene
+  filter_smarts:
+    2-methylsulfonylthiophene: '[#6]1:[#6]:[#6]:[#6](:[#16]:1)-[#16](=[#8])(=[#8])-[#6]'
+  category: red
+2-oxoethyl_acetate:
+  filter_group: 2-oxoethyl_acetate
+  filter_smarts:
+    2-oxoethyl_acetate: '[#6]-[#6](=[#8])-[#8]-[#6]-[#6]=[#8]'
+  category: red
+3-chlorothiophene:
+  filter_group: 3-chlorothiophene
+  filter_smarts:
+    3-chlorothiophene: '[#6]1(:[#6]:[#16]:[#6]:[#6]:1)-[#17]'
+  category: red
+3-methylthiophene:
+  filter_group: 3-methylthiophene
+  filter_smarts:
+    3-methylthiophene: '[#6]1(:[#6]:[#16]:[#6]:[#6]:1)-[#6]'
+  category: red
+4_pyridone_3_5_EWG:
+  filter_group: 4_pyridone_3_5_EWG
+  filter_smarts:
+    4_pyridone_3_5_EWG: '[#7,#8,#16]1~[c;H]~[c]([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C=O)])~[#6](=O)~c([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C=O)])~[c;H]1'
+  category: red
+4,5-dihydro-1,3-thiazol-2-amine:
+  filter_group: 4,5-dihydro-1,3-thiazol-2-amine
+  filter_smarts:
+    4,5-dihydro-1,3-thiazol-2-amine: '[#16]1-[#6]-[#6]-[#7]=[#6]-1-[#7]'
+  category: red
+5-chloro-2,4-dimethyl-1,2-thiazol-3-one:
+  filter_group: 5-chloro-2,4-dimethyl-1,2-thiazol-3-one
+  filter_smarts:
+    5-chloro-2,4-dimethyl-1,2-thiazol-3-one: '[#6]1(:[#6](:[#6](=[#8]):[#7](:[#16]:1)-[#6])-[#6])-[#17]'
+  category: red
+acyl_phosphyl_sulfonyl_halide:
+  filter_group: acyl_phosphyl_sulfonyl_halide
+  filter_smarts:
+    acyl_phosphyl_sulfonyl_halide: '[C,S,P](=O)[F,Cl,Br,I]'
+  category: red
+foso:
+  filter_group: foso
+  filter_smarts:
+    foso: O=S(*)OF
+  category: red
+sulfonyl_halide:
+  filter_group: sulfonyl_halide
+  filter_smarts:
+    sulfonyl_halide: S(=O)(=O)[F,Cl,Br,I]
+  category: red
+activated_4_membered_ring:
+  filter_group: activated_4_membered_ring
+  filter_smarts:
+    activated_4mem_ring: '[#6]1~[$(C(=O)),$(S(=O))]~[O,S,N]~[$(C(=O)),$(S(=O))]1'
+  category: red
+para_activated_aryl_ester:
+  filter_group: para_activated_aryl_ester
+  filter_smarts:
+    para_activated_aryl_ester: O=[C,S]Oc1aaa([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O)O),$(C(=O)N)])aa1
+  category: red
+ortho_activated_aryl_ester:
+  filter_group: ortho_activated_aryl_ester
+  filter_smarts:
+    ortho_activated_aryl_ester: O=[C,S]Oc1aaaaa([$(S(=O)(=O)),$(C(F)(F)(F)),$(C#N),$(N(=O)(=O)),$([N+](=O)[O-]),$(C(=O)O),$(C(=O)N)])1
+  category: red
+halo_phenolic_carbonyl:
+  filter_group: halo_phenolic_carbonyl
+  filter_smarts:
+    halo_phenolic_carbonyl: C(=O)Oc1c([Cl,F])[cH1,$(c[F,Cl])]c([F,Cl])[cH1,$(c[F,Cl])]c1([F,Cl])
+  category: red
+pentafluorophenyl_ester:
+  filter_group: pentafluorophenyl_ester
+  filter_smarts:
+    pentafluorophenyl_ester: C(=O)Oc1c(F)c(F)c(F)c(F)c1(F)
+  category: red
+acyclic_enol-like:
+  filter_group: acyclic_enol-like
+  filter_smarts:
+    Terminal_vinyl: '[CH2]=[CH][N,O,P,S;R0]'
+  category: red
+acyl_cyanide:
+  filter_group: acyl_cyanide
+  filter_smarts:
+    acyl_cyanide: N#CC(=O)
+  category: red
+adamantyl:
+  filter_group: adamantyl
+  filter_smarts:
+    adamantyl: C12CC3CC(C1)CC(C2)C3
+  category: amber
+adjacent_ring_double_bonds:
+  filter_group: adjacent_ring_double_bonds
+  filter_smarts:
+    Adjacent_Ring_Double_Bonds: '[*;R]=[*;R]=[*;R]'
+  category: red
+aldehyde:
+  filter_group: aldehyde
+  filter_smarts:
+    Aldehyde: '[#6][C!H0]=O'
+  category: red
+quat_N_acyl:
+  filter_group: quat_N_acyl
+  filter_smarts:
+    quat_N_acyl: '[N,n;+]!@C(=O)'
+  category: red
+aliphatic_long_chain:
+  filter_group: aliphatic_long_chain
+  filter_smarts:
+    gte_8_CF2_or_CH2: '[CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0][CH2,$(C(F)(F));R0]'
+    Long_aliphatic_chain: '[N,C,S,O]-&!@[N,C,S,O]-&!@[N,C,S,O]-&!@[N,C,S,O]-&!@[N,C,S,O]-&!@[N,C,S,O]-&!@[N,C,S,O]'
+    long_aliphatic_chain__6+: '[CH2][CH2][CH2]-!@[CH2][CH2][CH2]'
+    long_chain_hydrocarbon: '[CD2;R0][CD2;R0][CD2;R0][CD2;R0][CD2;R0][CD2;R0]'
+  category: amber
+poly_ether:
+  filter_group: poly_ether
+  filter_smarts:
+    poly_ethers: O[CH2][CH2]O-!@[CH2][CH2]O
+  category: amber
+alkene:
+  filter_group: alkene
+  filter_smarts:
+    isolated_alkene: '[$([CH2]),$([CH][CX4]),$(C([CX4])[CX4])]=[$([CH2]),$([CH][CX4]),$(C([CX4])[CX4])]'
+  category: amber
+phenylethene:
+  filter_group: phenylethene
+  filter_smarts:
+    phenylethene: c1ccccc1!@[CH]=!@[C!H0]
+  category: amber
+alkyl_sulfonate:
+  filter_group: alkyl_sulfonate
+  filter_smarts:
+    alkyl_sulfonate: '[#6][P,S](~[OX1])(~[OX1])O[C!H0]'
+  category: red
+alkylating_agent:
+  filter_group: alkylating_agent
+  filter_smarts:
+    alkylating_agent: '[CX4][Cl,Br,I]'
+  category: red
+alkyne:
+  filter_group: alkyne
+  filter_smarts:
+    Ring_Triple_Bond: '[C,c;R]#[C,c;R]'
+  category: amber
+allene_like:
+  filter_group: allene_like
+  filter_smarts:
+    allene: '*=C=*'
+  category: red
+allyl_halide:
+  filter_group: allyl_halide
+  filter_smarts:
+    allyl_halide: '[F,Cl,Br,I][CX4]C=C'
+  category: red
+12_dicarbonyl:
+  filter_group: 12_dicarbonyl
+  filter_smarts:
+    12_dicarbonyl: '*C(=O)C(=O)*'
+  category: red
+12_dicarbonyl_tautomer:
+  filter_group: 12_dicarbonyl_tautomer
+  filter_smarts:
+    12_dicarbonyl_tautomer: '[*!$(C[OH])]=C([OH])C(=O)*'
+  category: red
+thiophene:
+  filter_group: thiophene
+  filter_smarts:
+    thiophene: '[#6]1:[#6]:[#16]:[#6]:[#6]:1'
+  category: amber
+aminothiazole:
+  filter_group: aminothiazole
+  filter_smarts:
+    aminothiazole: s1ccnc1[N!H0]
+  category: amber
+anhydride:
+  filter_group: anhydride
+  filter_smarts:
+    anhydride: '[$(C(=O)),$(C(=S))]-[O,S]-[$(C(=O)),$(C(=S)),$(C(=[N;!R])),$(C(=N(-[C;X4])))]'
+  category: red
+aniline:
+  filter_group: aniline
+  filter_smarts:
+    aniline: '[NH2D1]-c(:*):*'
+  category: amber
+aryl_iodine:
+  filter_group: aryl_iodine
+  filter_smarts:
+    aryl_iodide: I-c:*
+  category: amber
+aryl_phosphonate:
+  filter_group: aryl_phosphonate
+  filter_smarts:
+    aryl_phosphonate: P(=O)-[O;!R]-a
+  category: red
+azanitrone:
+  filter_group: azanitrone
+  filter_smarts:
+    Azanitrone: N=[N+]([O-])C
+  category: red
+azido_group:
+  filter_group: azido_group
+  filter_smarts:
+    Azide: N=N=N
+  category: amber
+quaternary_nitrogen_dbl:
+  filter_group: quaternary_nitrogen_dbl
+  filter_smarts:
+    quaternary_nitrogen: '[*]=[N+]=[*]'
+  category: amber
+bad_cation:
+  filter_group: bad_cation
+  filter_smarts:
+    bad_cations: '[C+,F+,Cl+,Br+,I+,Se+,O+,o+,c+,S+,s+]'
+  category: red
+bad_element:
+  filter_group: bad_element
+  filter_smarts:
+    Undesirable_Elements_Salts: '[Ac,Ag,Am,Ar,As,At,Au,Ba,Be,Bi,Bk,Cd,Ce,Cf,Cm,Cr,Cs,Dy,Er,Eu,Fr,Ga,Gd,Ge,He,Hf,Ho,In,Ir,Kr,La,Lu,Mo,Nb,Nd,Ne,Ni,Np,Os,Pa,Pb,Pd,Pm,Po,Pr,Pt,Pu,Ra,Rb,Re,Rh,Rn,Ru,Sb,Sc,Se,Sm,Sr,Ta,Tb,Tc,Te,Th,Ti,Tl,Tm,U,V,W,Xe,Y,Yb,Zr]'
+  category: red
+bad_furan:
+  filter_group: bad_furan
+  filter_smarts:
+    2H_3H_5_furan: '[H][#6]-1=[#6]([H])-[#6]=[#6](-*)-[#8]-1'
+  category: amber
+bad_thiophene:
+  filter_group: bad_thiophene
+  filter_smarts:
+    2H_3H_5_thiophene: '[H][#6]-1=[#6]([H])-[#6]=[#6](-*)-[#16]-1'
+  category: amber
+Benzene-1,2,3-triol:
+  filter_group: Benzene-1,2,3-triol
+  filter_smarts:
+    benzene-1,2,3-triol: '[#6]1(:[#6](:[#6]:[#6]:[#6]:[#6]:1-[#8])-[#8])-[#8]'
+  category: amber
+benzhydrol:
+  filter_group: benzhydrol
+  filter_smarts:
+    benzhydrol: '[OH1]-C(-c1ccccc1)c2ccccc2'
+  category: amber
+beta_keto_carbonyl:
+  filter_group: beta_keto_carbonyl
+  filter_smarts:
+    oxy-amide: '[#6]C(=O)!@C!@C(=O)N'
+  category: amber
+beta_lactam:
+  filter_group: beta_lactam
+  filter_smarts:
+    betalactam: C1(=O)~[#6]~[#6]N1
+  category: amber
+beta_lactone:
+  filter_group: beta_lactone
+  filter_smarts:
+    beta_lactone: '[#6,#15,#16]1(=O)~[#6]~[#6]~[#8,#16]1'
+  category: red
+biotin_analogue:
+  filter_group: biotin_analogue
+  filter_smarts:
+    biotin_analogue: C12C(NC(N1)=O)CSC2
+  category: amber
+bis_keto_olefin:
+  filter_group: bis_keto_olefin
+  filter_smarts:
+    bis_keto_olefin: CC(=O)[$([C&H1]),$(C-F),$(C-Cl),$(C-Br),$(C-I)]=[$([C&H1]),$(C-F),$(C-Cl),$(C-Br),$(C-I)]C(=O)C
+  category: red
+boron:
+  filter_group: boron
+  filter_smarts:
+    boron_warhead: '[C,c]~[#5]'
+  category: red
+carbamate_CBZ_Protected:
+  filter_group: carbamate_CBZ_Protected
+  filter_smarts:
+    carbamate_CBZ_Protected: NC(O[CH2]c1ccccc1)=O
+  category: amber
+carbamate_boc_Protected:
+  filter_group: carbamate_boc_Protected
+  filter_smarts:
+    carbamate_boc_Protected: NC(OC([CH3])([CH3])[CH3])=O
+  category: amber
+carbamate_include_di-substitued_N:
+  filter_group: carbamate_include_di-substitued_N
+  filter_smarts:
+    carbamate_include_di-substitued_N: OC(=O)-!@[NX3]
+  category: amber
+carbamimidoyl_chloride:
+  filter_group: carbamimidoyl_chloride
+  filter_smarts:
+    carbamimidoyl_chloride: '[#7]=[#6](-[#7])-[#17]'
+  category: red
+chloramidine:
+  filter_group: chloramidine
+  filter_smarts:
+    chloramidine: '[Cl]C([C&R0])=N'
+  category: red
+chloro-acrylaldehyde:
+  filter_group: chloro-acrylaldehyde
+  filter_smarts:
+    chloro-acrylaldehyde: '[#17]/[#6]=[#6]/[#6]=[#8]'
+  category: red
+Coumarin:
+  filter_group: Coumarin
+  filter_smarts:
+    Coumarin: c1cc2C=CC(=O)Oc2cc1
+    cumarine: c1ccc2c(c1)ccc(=O)o2
+  category: amber
+crown_ether:
+  filter_group: crown_ether
+  filter_smarts:
+    crown_ether: '[OR2,NR2]@[CR2]@[CR2]@[OR2,NR2]@[CR2]@[CR2]@[OR2,NR2]'
+  category: red
+cyanidin:
+  filter_group: cyanidin
+  filter_smarts:
+    cyanidin: '[OH]c1cc([OH])cc2=[O+]C(=C([OH])Cc21)c3cc([OH])c([OH])cc3'
+  category: red
+cyanohydrin:
+  filter_group: cyanohydrin
+  filter_smarts:
+    cyanohydrin: '[C;X4](-[OH,NH1,NH2,SH])(-C#N)'
+  category: red
+cyanophosphonate:
+  filter_group: cyanophosphonate
+  filter_smarts:
+    cyano_phosphonate: P(O[A,a])(O[A,a])(=O)C#N
+  category: red
+Amino_Naphtalimide:
+  filter_group: Amino_Naphtalimide
+  filter_smarts:
+    Amino_Naphtalimide: c1(N)ccc(C(=O)NC3(=O))c(c3ccc2)c21
+  category: red
+Dye_8:
+  filter_group: Dye_8
+  filter_smarts:
+    Dye_8: c12cccc(C(=O)N(-&!@C)C(=O)3)c2c3ccc1
+  category: red
+Thiomorpholinedione:
+  filter_group: Thiomorpholinedione
+  filter_smarts:
+    Thiomorpholinedione: N1C(=O)CSCC1=O
+  category: amber
+Cyclobutene:
+  filter_group: Cyclobutene
+  filter_smarts:
+    cyclobutene: C1CC=C1
+  category: amber
+Cycloheptane:
+  filter_group: Cycloheptane
+  filter_smarts:
+    cycloheptane: '[CR2]1[CR2][CR2][CR2][CR2][CR2][CR2]1'
+    cycloheptane_ar: '[CR2]1[CR2][CR2]cc[CR2][CR2]1'
+  category: amber
+# Redundant to cycloheptane, added above
+# Cycloheptane_ar:
+#   filter_group: Cycloheptane_ar
+#   filter_smarts:
+#     cycloheptane: '[CR2]1[CR2][CR2]cc[CR2][CR2]1'
+#   category: amber
+Cyclooctane:
+  filter_group: Cyclooctane
+  filter_smarts:
+    cyclooctane: '[CR2]1[CR2][CR2][CR2][CR2][CR2][CR2][CR2]1'
+    cyclooctane_ar: '[CR2]1[CR2][CR2]cc[CR2][CR2][CR2]1'
+  category: amber
+# Redundant to cyclooctane, added above
+# Cyclooctane_ar:
+#   filter_group: Cyclooctane_ar
+#   filter_smarts:
+#     cyclooctane: '[CR2]1[CR2][CR2]cc[CR2][CR2][CR2]1'
+#   category: amber
+1H-cyclopenta[b]naphthalene:
+  filter_group: 1H-cyclopenta[b]naphthalene
+  filter_smarts:
+    1H-cyclopenta[b]naphthalene: '[#6]1:[#6]:[#6]:[#6]2:[#6](:[#6]:1):[#6]:[#6]1:[#6](:[#6]:2)-[#6]=[#6]-[#6]-1'
+  category: red
+3H-cyclopenta[a]naphthalene:
+  filter_group: 3H-cyclopenta[a]naphthalene
+  filter_smarts:
+    3H-cyclopenta[a]naphthalene: '[#6]1:[#6]:[#6]:[#6]2:[#6](:[#6]:1):[#6]1:[#6](:[#6]:[#6]:2)-[#6]-[#6]=[#6]-1'
+  category: red
+
+
+### new filters
+carbonate:
+  filter_group: carbonate
+  filter_smarts:
+    carbonate: 'OC(=O)O'
+  category: amber
+

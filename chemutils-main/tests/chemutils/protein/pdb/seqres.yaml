@@ -1,0 +1,78 @@
+# 124D, DNA-RNA pair
+- seqres: |
+    SEQRES   1 A    8   DG  DT  DC  DA  DC  DA  DT  DG                              
+    SEQRES   1 B    8    C   A   U   G   U   G   A   C                              
+  sequences:
+    A: ["DG", "DT", "DC", "DA", "DC", "DA", "DT", "DG"]
+    B: ["C", "A", "U", "G", "U", "G", "A", "C"]
+# 7RPZ
+- seqres: |
+    SEQRES   1 A  170  GLY MET THR GLU TYR LYS LEU VAL VAL VAL GLY ALA ASP          
+    SEQRES   2 A  170  GLY VAL GLY LYS SER ALA LEU THR ILE GLN LEU ILE GLN          
+    SEQRES   3 A  170  ASN HIS PHE VAL ASP GLU TYR ASP PRO THR ILE GLU ASP          
+    SEQRES   4 A  170  SER TYR ARG LYS GLN VAL VAL ILE ASP GLY GLU THR SER          
+    SEQRES   5 A  170  LEU LEU ASP ILE LEU ASP THR ALA GLY GLN GLU GLU TYR          
+    SEQRES   6 A  170  SER ALA MET ARG ASP GLN TYR MET ARG THR GLY GLU GLY          
+    SEQRES   7 A  170  PHE LEU LEU VAL PHE ALA ILE ASN ASN THR LYS SER PHE          
+    SEQRES   8 A  170  GLU ASP ILE HIS HIS TYR ARG GLU GLN ILE LYS ARG VAL          
+    SEQRES   9 A  170  LYS ASP SER GLU ASP VAL PRO MET VAL LEU VAL GLY ASN          
+    SEQRES  10 A  170  LYS SER ASP LEU PRO SER ARG THR VAL ASP THR LYS GLN          
+    SEQRES  11 A  170  ALA GLN ASP LEU ALA ARG SER TYR GLY ILE PRO PHE ILE          
+    SEQRES  12 A  170  GLU THR SER ALA LYS THR ARG GLN GLY VAL ASP ASP ALA          
+    SEQRES  13 A  170  PHE TYR THR LEU VAL ARG GLU ILE ARG LYS HIS LYS GLU          
+    SEQRES  14 A  170  LYS                                                          
+  sequences:
+    A: ["GLY", "MET", "THR", "GLU", "TYR", "LYS", "LEU", "VAL", "VAL", "VAL", "GLY", "ALA", "ASP", "GLY", "VAL", "GLY", "LYS", "SER", "ALA", "LEU", "THR", "ILE", "GLN", "LEU", "ILE", "GLN", "ASN", "HIS", "PHE", "VAL", "ASP", "GLU", "TYR", "ASP", "PRO", "THR", "ILE", "GLU", "ASP", "SER", "TYR", "ARG", "LYS", "GLN", "VAL", "VAL", "ILE", "ASP", "GLY", "GLU", "THR", "SER", "LEU", "LEU", "ASP", "ILE", "LEU", "ASP", "THR", "ALA", "GLY", "GLN", "GLU", "GLU", "TYR", "SER", "ALA", "MET", "ARG", "ASP", "GLN", "TYR", "MET", "ARG", "THR", "GLY", "GLU", "GLY", "PHE", "LEU", "LEU", "VAL", "PHE", "ALA", "ILE", "ASN", "ASN", "THR", "LYS", "SER", "PHE", "GLU", "ASP", "ILE", "HIS", "HIS", "TYR", "ARG", "GLU", "GLN", "ILE", "LYS", "ARG", "VAL", "LYS", "ASP", "SER", "GLU", "ASP", "VAL", "PRO", "MET", "VAL", "LEU", "VAL", "GLY", "ASN", "LYS", "SER", "ASP", "LEU", "PRO", "SER", "ARG", "THR", "VAL", "ASP", "THR", "LYS", "GLN", "ALA", "GLN", "ASP", "LEU", "ALA", "ARG", "SER", "TYR", "GLY", "ILE", "PRO", "PHE", "ILE", "GLU", "THR", "SER", "ALA", "LYS", "THR", "ARG", "GLN", "GLY", "VAL", "ASP", "ASP", "ALA", "PHE", "TYR", "THR", "LEU", "VAL", "ARG", "GLU", "ILE", "ARG", "LYS", "HIS", "LYS", "GLU", "LYS"]
+# 5EJV, oligopeptides
+- seqres: |
+    SEQRES   1 A  262  GLY PRO THR PRO GLU ALA PRO TYR ALA SER LEU THR GLU          
+    SEQRES   2 A  262  ILE GLU HIS LEU VAL GLN SER VAL CYS LYS SER TYR ARG          
+    SEQRES   3 A  262  GLU THR CYS GLN LEU ARG LEU GLU ASP LEU LEU ARG GLN          
+    SEQRES   4 A  262  ARG SER ASN ILE PHE SER ARG GLU GLU VAL THR GLY TYR          
+    SEQRES   5 A  262  GLN ARG LYS SER MET TRP GLU MET TRP GLU ARG CYS ALA          
+    SEQRES   6 A  262  HIS HIS LEU THR GLU ALA ILE GLN TYR VAL VAL GLU PHE          
+    SEQRES   7 A  262  ALA LYS ARG LEU SER GLY PHE MET GLU LEU CYS GLN ASN          
+    SEQRES   8 A  262  ASP GLN ILE VAL LEU LEU LYS ALA GLY ALA MET GLU VAL          
+    SEQRES   9 A  262  VAL LEU VAL ARG MET CYS ARG ALA TYR ASN ALA ASP ASN          
+    SEQRES  10 A  262  ARG THR VAL PHE PHE GLU GLY LYS TYR GLY GLY MET GLU          
+    SEQRES  11 A  262  LEU PHE ARG ALA LEU GLY CYS SER GLU LEU ILE SER SER          
+    SEQRES  12 A  262  ILE PHE ASP PHE SER HIS SER LEU SER ALA LEU HIS PHE          
+    SEQRES  13 A  262  SER GLU ASP GLU ILE ALA LEU TYR THR ALA LEU VAL LEU          
+    SEQRES  14 A  262  ILE ASN ALA HIS ARG PRO GLY LEU GLN GLU LYS ARG LYS          
+    SEQRES  15 A  262  VAL GLU GLN LEU GLN TYR ASN LEU GLU LEU ALA PHE HIS          
+    SEQRES  16 A  262  HIS HIS LEU CYS LYS THR HIS ARG GLN SER ILE LEU ALA          
+    SEQRES  17 A  262  LYS LEU PRO PRO LYS GLY LYS LEU ARG SER LEU CYS SER          
+    SEQRES  18 A  262  GLN HIS VAL GLU ARG LEU GLN ILE PHE GLN HIS LEU HIS          
+    SEQRES  19 A  262  PRO ILE VAL VAL GLN ALA ALA PHE PRO PRO LEU TYR LYS          
+    SEQRES  20 A  262  GLU LEU PHE SER THR GLU THR GLU SER PRO VAL GLY LEU          
+    SEQRES  21 A  262  SER LYS                                                      
+    SEQRES   1 C   19  VAL GLU SER GLU PHE PRO TYR LEU LEU SER LEU LEU GLY          
+    SEQRES   2 C   19  GLU VAL SER PRO GLN PRO                                      
+    SEQRES   1 B  262  GLY PRO THR PRO GLU ALA PRO TYR ALA SER LEU THR GLU          
+    SEQRES   2 B  262  ILE GLU HIS LEU VAL GLN SER VAL CYS LYS SER TYR ARG          
+    SEQRES   3 B  262  GLU THR CYS GLN LEU ARG LEU GLU ASP LEU LEU ARG GLN          
+    SEQRES   4 B  262  ARG SER ASN ILE PHE SER ARG GLU GLU VAL THR GLY TYR          
+    SEQRES   5 B  262  GLN ARG LYS SER MET TRP GLU MET TRP GLU ARG CYS ALA          
+    SEQRES   6 B  262  HIS HIS LEU THR GLU ALA ILE GLN TYR VAL VAL GLU PHE          
+    SEQRES   7 B  262  ALA LYS ARG LEU SER GLY PHE MET GLU LEU CYS GLN ASN          
+    SEQRES   8 B  262  ASP GLN ILE VAL LEU LEU LYS ALA GLY ALA MET GLU VAL          
+    SEQRES   9 B  262  VAL LEU VAL ARG MET CYS ARG ALA TYR ASN ALA ASP ASN          
+    SEQRES  10 B  262  ARG THR VAL PHE PHE GLU GLY LYS TYR GLY GLY MET GLU          
+    SEQRES  11 B  262  LEU PHE ARG ALA LEU GLY CYS SER GLU LEU ILE SER SER          
+    SEQRES  12 B  262  ILE PHE ASP PHE SER HIS SER LEU SER ALA LEU HIS PHE          
+    SEQRES  13 B  262  SER GLU ASP GLU ILE ALA LEU TYR THR ALA LEU VAL LEU          
+    SEQRES  14 B  262  ILE ASN ALA HIS ARG PRO GLY LEU GLN GLU LYS ARG LYS          
+    SEQRES  15 B  262  VAL GLU GLN LEU GLN TYR ASN LEU GLU LEU ALA PHE HIS          
+    SEQRES  16 B  262  HIS HIS LEU CYS LYS THR HIS ARG GLN SER ILE LEU ALA          
+    SEQRES  17 B  262  LYS LEU PRO PRO LYS GLY LYS LEU ARG SER LEU CYS SER          
+    SEQRES  18 B  262  GLN HIS VAL GLU ARG LEU GLN ILE PHE GLN HIS LEU HIS          
+    SEQRES  19 B  262  PRO ILE VAL VAL GLN ALA ALA PHE PRO PRO LEU TYR LYS          
+    SEQRES  20 B  262  GLU LEU PHE SER THR GLU THR GLU SER PRO VAL GLY LEU          
+    SEQRES  21 B  262  SER LYS                                                      
+    SEQRES   1 D   19  VAL GLU SER GLU PHE PRO TYR LEU LEU SER LEU LEU GLY          
+    SEQRES   2 D   19  GLU VAL SER PRO GLN PRO                                      
+  sequences:
+    A: ['GLY', 'PRO', 'THR', 'PRO', 'GLU', 'ALA', 'PRO', 'TYR', 'ALA', 'SER', 'LEU', 'THR', 'GLU', 'ILE', 'GLU', 'HIS', 'LEU', 'VAL', 'GLN', 'SER', 'VAL', 'CYS', 'LYS', 'SER', 'TYR', 'ARG', 'GLU', 'THR', 'CYS', 'GLN', 'LEU', 'ARG', 'LEU', 'GLU', 'ASP', 'LEU', 'LEU', 'ARG', 'GLN', 'ARG', 'SER', 'ASN', 'ILE', 'PHE', 'SER', 'ARG', 'GLU', 'GLU', 'VAL', 'THR', 'GLY', 'TYR', 'GLN', 'ARG', 'LYS', 'SER', 'MET', 'TRP', 'GLU', 'MET', 'TRP', 'GLU', 'ARG', 'CYS', 'ALA', 'HIS', 'HIS', 'LEU', 'THR', 'GLU', 'ALA', 'ILE', 'GLN', 'TYR', 'VAL', 'VAL', 'GLU', 'PHE', 'ALA', 'LYS', 'ARG', 'LEU', 'SER', 'GLY', 'PHE', 'MET', 'GLU', 'LEU', 'CYS', 'GLN', 'ASN', 'ASP', 'GLN', 'ILE', 'VAL', 'LEU', 'LEU', 'LYS', 'ALA', 'GLY', 'ALA', 'MET', 'GLU', 'VAL', 'VAL', 'LEU', 'VAL', 'ARG', 'MET', 'CYS', 'ARG', 'ALA', 'TYR', 'ASN', 'ALA', 'ASP', 'ASN', 'ARG', 'THR', 'VAL', 'PHE', 'PHE', 'GLU', 'GLY', 'LYS', 'TYR', 'GLY', 'GLY', 'MET', 'GLU', 'LEU', 'PHE', 'ARG', 'ALA', 'LEU', 'GLY', 'CYS', 'SER', 'GLU', 'LEU', 'ILE', 'SER', 'SER', 'ILE', 'PHE', 'ASP', 'PHE', 'SER', 'HIS', 'SER', 'LEU', 'SER', 'ALA', 'LEU', 'HIS', 'PHE', 'SER', 'GLU', 'ASP', 'GLU', 'ILE', 'ALA', 'LEU', 'TYR', 'THR', 'ALA', 'LEU', 'VAL', 'LEU', 'ILE', 'ASN', 'ALA', 'HIS', 'ARG', 'PRO', 'GLY', 'LEU', 'GLN', 'GLU', 'LYS', 'ARG', 'LYS', 'VAL', 'GLU', 'GLN', 'LEU', 'GLN', 'TYR', 'ASN', 'LEU', 'GLU', 'LEU', 'ALA', 'PHE', 'HIS', 'HIS', 'HIS', 'LEU', 'CYS', 'LYS', 'THR', 'HIS', 'ARG', 'GLN', 'SER', 'ILE', 'LEU', 'ALA', 'LYS', 'LEU', 'PRO', 'PRO', 'LYS', 'GLY', 'LYS', 'LEU', 'ARG', 'SER', 'LEU', 'CYS', 'SER', 'GLN', 'HIS', 'VAL', 'GLU', 'ARG', 'LEU', 'GLN', 'ILE', 'PHE', 'GLN', 'HIS', 'LEU', 'HIS', 'PRO', 'ILE', 'VAL', 'VAL', 'GLN', 'ALA', 'ALA', 'PHE', 'PRO', 'PRO', 'LEU', 'TYR', 'LYS', 'GLU', 'LEU', 'PHE', 'SER', 'THR', 'GLU', 'THR', 'GLU', 'SER', 'PRO', 'VAL', 'GLY', 'LEU', 'SER', 'LYS']
+    C: ['VAL', 'GLU', 'SER', 'GLU', 'PHE', 'PRO', 'TYR', 'LEU', 'LEU', 'SER', 'LEU', 'LEU', 'GLY', 'GLU', 'VAL', 'SER', 'PRO', 'GLN', 'PRO']
+    B: ['GLY', 'PRO', 'THR', 'PRO', 'GLU', 'ALA', 'PRO', 'TYR', 'ALA', 'SER', 'LEU', 'THR', 'GLU', 'ILE', 'GLU', 'HIS', 'LEU', 'VAL', 'GLN', 'SER', 'VAL', 'CYS', 'LYS', 'SER', 'TYR', 'ARG', 'GLU', 'THR', 'CYS', 'GLN', 'LEU', 'ARG', 'LEU', 'GLU', 'ASP', 'LEU', 'LEU', 'ARG', 'GLN', 'ARG', 'SER', 'ASN', 'ILE', 'PHE', 'SER', 'ARG', 'GLU', 'GLU', 'VAL', 'THR', 'GLY', 'TYR', 'GLN', 'ARG', 'LYS', 'SER', 'MET', 'TRP', 'GLU', 'MET', 'TRP', 'GLU', 'ARG', 'CYS', 'ALA', 'HIS', 'HIS', 'LEU', 'THR', 'GLU', 'ALA', 'ILE', 'GLN', 'TYR', 'VAL', 'VAL', 'GLU', 'PHE', 'ALA', 'LYS', 'ARG', 'LEU', 'SER', 'GLY', 'PHE', 'MET', 'GLU', 'LEU', 'CYS', 'GLN', 'ASN', 'ASP', 'GLN', 'ILE', 'VAL', 'LEU', 'LEU', 'LYS', 'ALA', 'GLY', 'ALA', 'MET', 'GLU', 'VAL', 'VAL', 'LEU', 'VAL', 'ARG', 'MET', 'CYS', 'ARG', 'ALA', 'TYR', 'ASN', 'ALA', 'ASP', 'ASN', 'ARG', 'THR', 'VAL', 'PHE', 'PHE', 'GLU', 'GLY', 'LYS', 'TYR', 'GLY', 'GLY', 'MET', 'GLU', 'LEU', 'PHE', 'ARG', 'ALA', 'LEU', 'GLY', 'CYS', 'SER', 'GLU', 'LEU', 'ILE', 'SER', 'SER', 'ILE', 'PHE', 'ASP', 'PHE', 'SER', 'HIS', 'SER', 'LEU', 'SER', 'ALA', 'LEU', 'HIS', 'PHE', 'SER', 'GLU', 'ASP', 'GLU', 'ILE', 'ALA', 'LEU', 'TYR', 'THR', 'ALA', 'LEU', 'VAL', 'LEU', 'ILE', 'ASN', 'ALA', 'HIS', 'ARG', 'PRO', 'GLY', 'LEU', 'GLN', 'GLU', 'LYS', 'ARG', 'LYS', 'VAL', 'GLU', 'GLN', 'LEU', 'GLN', 'TYR', 'ASN', 'LEU', 'GLU', 'LEU', 'ALA', 'PHE', 'HIS', 'HIS', 'HIS', 'LEU', 'CYS', 'LYS', 'THR', 'HIS', 'ARG', 'GLN', 'SER', 'ILE', 'LEU', 'ALA', 'LYS', 'LEU', 'PRO', 'PRO', 'LYS', 'GLY', 'LYS', 'LEU', 'ARG', 'SER', 'LEU', 'CYS', 'SER', 'GLN', 'HIS', 'VAL', 'GLU', 'ARG', 'LEU', 'GLN', 'ILE', 'PHE', 'GLN', 'HIS', 'LEU', 'HIS', 'PRO', 'ILE', 'VAL', 'VAL', 'GLN', 'ALA', 'ALA', 'PHE', 'PRO', 'PRO', 'LEU', 'TYR', 'LYS', 'GLU', 'LEU', 'PHE', 'SER', 'THR', 'GLU', 'THR', 'GLU', 'SER', 'PRO', 'VAL', 'GLY', 'LEU', 'SER', 'LYS']
+    D: ['VAL', 'GLU', 'SER', 'GLU', 'PHE', 'PRO', 'TYR', 'LEU', 'LEU', 'SER', 'LEU', 'LEU', 'GLY', 'GLU', 'VAL', 'SER', 'PRO', 'GLN', 'PRO']

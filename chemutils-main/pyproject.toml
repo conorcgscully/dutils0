@@ -1,0 +1,209 @@
+[project]
+name = "ch-chemutils"
+description = "Utility code for chemistry-based operations."
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dynamic = ["version"]
+dependencies = [
+    # Required for generating PDB files
+    # 1.80 caused breaking change for writing to BytesIO
+    # 1.82 removes Bio.Data.SCOPData
+    "biopython==1.81",
+    # Main cheminformatics toolkits
+    # Pinned due to 2024.2 causing mmCIF parsing to fail
+    "OpenEye-toolkits<2024.2",
+    "rdkit>=2024.9.5",
+    # Main math library
+    "numpy<2",
+    # Filesystem utilities
+    "ch-fsutils>=3.2",
+    # Network library used for CIP assignment
+    "networkx>=3.1",
+    # Interface between Python and Java
+    # Required for integration with Chemaxon
+    "py4j>=0.10.9",
+    # Conversion of color name/hex string to RGB
+    # Used for 2D drawing code
+    "webcolors>=1",
+    # Required for using the selection language
+    "antlr4-python3-runtime>=4.13"
+]
+
+[build-system]
+requires = ["setuptools>=61", "setuptools-scm>=7"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["chemutils"]
+
+[tool.setuptools_scm]
+
+[tool.pytest.ini_options]
+addopts = "--cov=chemutils --cov-report xml --cov-branch -n logical"
+
+[tool.ruff]
+line-length = 100
+exclude = [
+    "generated"
+]
+
+[tool.ruff.lint]
+select = [
+    'B',    # flake8-bugbear
+    'C4',   # flake8-comprehensions
+    'D',    # pydocstyle
+    "D213", # Multiline docstrings start on second line
+    'E',    # pyflakes
+    'ERA',  # flake8-eradicate
+    'F',    # pyflakes
+    'I',    # isort
+    'PLE',  # pylint errors
+    'RUF',  # Ruff-specific rules
+    'SIM',  # flake8-simplify
+    'T20',  # flake8-print
+    'UP',   # pyupgrade
+    'W',    # pyflakes
+]
+ignore = [
+    "D1",   # Don't force docstring (yet)
+    "D212", # Multiline docstrings start on first line
+    "E402", # Allow impor ts mid way through file
+    "E501", # Line length
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-third-party = ["fsutils", "cbor_np"]
+
+[tool.mypy]
+files = "chemutils"
+show_error_codes = true
+pretty = true
+warn_unreachable = true
+strict = true
+plugins = ["numpy.typing.mypy_plugin"]
+exclude = ['chemutils/molecule/selection/generated']
+
+[[tool.mypy.overrides]]
+module = [
+    'Bio.*',
+    'openeye.*',
+    'rdkit.*',
+    'networkx.*',
+    'botocore.*',
+    'py4j.*',
+    'nglview.*',
+    'IPython.*',
+    "webcolors.*",
+    "antlr4.*",
+    "tmtools.*",
+]
+ignore_missing_imports = true
+
+# RDKit messed up their stubs
+# https://github.com/rdkit/rdkit/issues/7401
+[[tool.mypy.overrides]]
+module = [
+    'rdkit.*',
+]
+follow_imports = "skip"
+follow_imports_for_stubs = true
+
+[[tool.mypy.overrides]]
+module = [
+    'chemutils.molecule.selection.generated.*',
+]
+follow_imports = "skip"
+
+[tool.pixi.project]
+channels = ["conda-forge", "https://conda.i.charmtx.com", "bioconda"]
+platforms = ["linux-64", "osx-arm64"]
+
+[tool.pixi.tasks]
+generate-selection-language = "sh ./generate_selection_language.sh"
+
+[tool.pixi.pypi-options]
+index-url = "https://pypi.org/simple"
+extra-index-urls = [
+    "https://aws@charm-pypi-455661021047.d.codeartifact.eu-west-1.amazonaws.com/pypi/charm-pypi/simple/",
+]
+
+[tool.pixi.dependencies]
+nauty = ">=2.8.9,<3"
+
+[tool.pixi.feature.chemaxon.dependencies]
+chemaxon = ">=23.10.0,<24"
+
+[tool.pixi.feature.tmalign.pypi-dependencies]
+tmtools = "*"
+
+[tool.pixi.feature.nglview.pypi-dependencies]
+nglview = ">=3.1"
+
+[tool.pixi.feature.test.pypi-dependencies]
+# Core unit testing framework
+pytest = ">=7.3"  
+# Parallel tests
+pytest-xdist = ">=3.6"
+# Code coverage support for pytest
+pytest-cov = ">=4"
+# Unit test mocking for boto3
+moto = ">=5"
+# Required to create mocked AWS resources for testing
+boto3 = ">=1.26"
+# Mocking for the local filesystem
+pyfakefs = ">=5.2"
+# Mocking for the requests library
+responses = ">=0.23"
+# Snapshot testing
+syrupy = ">4.0"
+# Image library for testing drawing code
+pillow = ">=10"
+[tool.pixi.feature.test.tasks]
+test = "pytest tests -m 'not no_chemaxon'"
+
+[tool.pixi.feature.no-chemaxon.tasks]
+test = "pytest tests/test_no_chemaxon.py"
+
+[tool.pixi.feature.typing.pypi-dependencies]
+# Static typing using type annotations
+mypy = ">=1.2"
+# Types for requests
+types-requests = ">=2.29"
+[tool.pixi.feature.typing.tasks]
+typing = "mypy"
+
+[tool.pixi.feature.lint.pypi-dependencies]
+# All-in-one linter and formatter
+ruff = ">=0.9.0"
+[tool.pixi.feature.lint.tasks]
+lint = "ruff format --check . && ruff check ."
+fix = "ruff format . && ruff check --fix ."
+
+[tool.pixi.feature.dev.pypi-dependencies]
+jupyter = ">=1.1"
+pandas = ">=2"
+
+[tool.pixi.feature.py310.dependencies]
+python = "~=3.10.0"
+
+[tool.pixi.feature.py311.dependencies]
+python = "~=3.11.0"
+
+[tool.pixi.feature.py312.dependencies]
+python = "~=3.12.0"
+
+[tool.pixi.environments]
+lint-py310 = {features = ["lint", "py310"], no-default-feature = true, solve-group = "py310" }
+lint-py311 = {features = ["lint", "py311"], no-default-feature = true, solve-group = "py311" }
+lint-py312 = {features = ["lint", "py312"], no-default-feature = true, solve-group = "py312" }
+typing-py310 = {features = ["chemaxon", "tmalign", "nglview", "typing", "py310"], solve-group = "py310" }
+typing-py311 = {features = ["chemaxon", "tmalign", "nglview", "typing", "py311"], solve-group = "py311" }
+typing-py312 = {features = ["chemaxon", "tmalign", "nglview", "typing", "py312"], solve-group = "py312" }
+test-py310 = { features = ["test", "chemaxon", "nglview", "tmalign", "py310"], solve-group = "py310" }
+test-py311 = { features = ["test", "chemaxon", "nglview", "tmalign", "py311"], solve-group = "py311" }
+test-py312 = { features = ["test", "chemaxon", "nglview", "tmalign", "py312"], solve-group = "py312" }
+test-no-chemaxon = { features = ["no-chemaxon", "nglview", "test", "py311"], solve-group = "py311" }
+default = { features = ["dev", "chemaxon", "tmalign", "nglview", "test", "typing", "lint", "py311"], solve-group = "py311" }
