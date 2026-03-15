@@ -40,3 +40,15 @@ Or activate the environment and use your normal workflow:
 pixi shell
 python -c "import dutils0; print(dutils0.__version__)"
 ```
+
+## How to Run Tests
+
+Run the full test suite or the regression tests for `extract_selected_atoms_as_pdb`:
+
+```bash
+pytest
+```
+
+```bash
+pytest dutils0/tests/test_pdb_extract.py
+```

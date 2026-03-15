@@ -52,9 +52,18 @@ class AtomIndexSelect(Select):
 
 
 # Optional _atom_site keys that MMCIFParser expects but mmCIF allows to omit.
+# group_PDB and pdbx_PDB_model_num are handled separately (inferred when missing).
 _ATOM_SITE_DEFAULTS = (
     ("_atom_site.B_iso_or_equiv", "0.0"),
     ("_atom_site.occupancy", "1.0"),
+)
+
+# Standard residue comp_ids -> ATOM; others (water, ligands, etc.) -> HETATM.
+_STANDARD_RESIDUES = frozenset(
+    # Standard amino acids
+    "ALA ARG ASN ASP CYS GLN GLU GLY HIS ILE LEU LYS MET PHE PRO SER THR TRP TYR VAL".split()
+    # Standard RNA/DNA
+    + "A C G U DA DC DG DT".split()
 )
 
 
@@ -67,6 +76,14 @@ def _inject_mmcif_atom_site_defaults(mmcif_dict: dict) -> None:
     for key, default_val in _ATOM_SITE_DEFAULTS:
         if key not in mmcif_dict:
             mmcif_dict[key] = [default_val] * n
+    if "_atom_site.group_PDB" not in mmcif_dict:
+        comp_ids = mmcif_dict.get("_atom_site.label_comp_id", ["UNK"] * n)
+        mmcif_dict["_atom_site.group_PDB"] = [
+            "ATOM" if (c in _STANDARD_RESIDUES) else "HETATM" for c in comp_ids
+        ]
+    # Single-model CIFs often omit pdbx_PDB_model_num; parser needs it to avoid adding model -1 repeatedly.
+    if "_atom_site.pdbx_PDB_model_num" not in mmcif_dict:
+        mmcif_dict["_atom_site.pdbx_PDB_model_num"] = ["1"] * n
 
 
 class _PermissiveMMCIFParser(MMCIFParser):
