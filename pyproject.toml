@@ -8,9 +8,13 @@ version = "0.1.0"
 description = "Utility package"
 readme = "README.md"
 requires-python = ">=3.8"
+dependencies = ["biopython>=1.80"]
 
 [project.optional-dependencies]
-dev = []
+dev = ["pytest>=7.0"]
+
+[tool.pytest.ini_options]
+testpaths = ["dutils0/tests"]
 
 [tool.setuptools.packages.find]
 where = ["."]
