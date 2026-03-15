@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Utility package"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = ["biopython>=1.80"]
+dependencies = ["biopython>=1.80", "gemmi", "rdkit"]
 
 [project.optional-dependencies]
 dev = ["pytest>=7.0"]
@@ -24,6 +24,9 @@ include = ["dutils0*", "rough*"]
 [tool.pixi.project]
 channels = ["conda-forge"]
 platforms = ["linux-64", "osx-arm64", "osx-64", "win-64"]
+
+[tool.pixi.dependencies]
+pymol-open-source = "*"
 
 [tool.pixi.pypi-dependencies]
 dutils0 = { path = ".", editable = true }
