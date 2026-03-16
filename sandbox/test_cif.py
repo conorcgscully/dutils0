@@ -35,5 +35,10 @@ def _(gemmi_from_rdkit, pr_romol, write_protein_str):
     return
 
 
+@app.cell
+def _():
+    return
+
+
 if __name__ == "__main__":
     app.run()

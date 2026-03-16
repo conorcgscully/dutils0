@@ -9,6 +9,7 @@ __all__ = [
     "read_protein_str",
     "write_protein_bytes",
     "write_protein_str",
+    "flag_protein_residues_by_ligand_proximity"
 ]
 
 
@@ -43,4 +44,7 @@ def __getattr__(name: str):
     if name == "write_protein_str":
         from .write import write_protein_str
         return write_protein_str
+    if name == "flag_protein_residues_by_ligand_proximity":
+        from .proximity import flag_protein_residues_by_ligand_proximity
+        return flag_protein_residues_by_ligand_proximity
     raise AttributeError(f"module {__name__!r} has no attribute {name!r}")

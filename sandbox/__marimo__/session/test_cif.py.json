@@ -42,6 +42,12 @@
         }
       ],
       "console": []
+    },
+    {
+      "id": "WCdn",
+      "code_hash": null,
+      "outputs": [],
+      "console": []
     }
   ]
 }
