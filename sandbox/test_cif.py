@@ -15,9 +15,19 @@ def _():
     from rdkit import Chem
     import tempfile
     import os
+    from rdsl import select_atoms, select_atom_ids, select_molecule, SelectionResult
+    from ipymolstar import PDBeMolstar
+
+    from rdkit.Chem import Draw
+    import marimo as mo
+
+    def rodraw(mol, size=(400, 300)):
+        return mo.image(Draw.MolToImage(mol, size=size))
+
+    st = read_protein_bytes('dutils0/tests/data/il5r_boltz_model.cif')
     st = read_protein_bytes('dutils0/tests/data/6H41.cif')
     # pymol_obj = gemmi_to_pymol(st, "m1")
-    return gemmi_from_rdkit, protein_to_rdkit, st, write_protein_str
+    return Chem, PDBeMolstar, protein_to_rdkit, rodraw, select_molecule, st
 
 
 @app.cell
@@ -29,9 +39,28 @@ def _(protein_to_rdkit, st):
 
 
 @app.cell
-def _(gemmi_from_rdkit, pr_romol, write_protein_str):
-    pr = gemmi_from_rdkit(pr_romol)
-    write_protein_str(pr, fmt="cif")
+def _(Chem, PDBeMolstar, pr_romol):
+    molblock = Chem.MolToPDBBlock(pr_romol)  # mol is an RDKit Mol with a conformer
+
+    view = PDBeMolstar(
+        custom_data={
+            "data": molblock,
+            "format": "pdb",
+            "binary": False,
+        },
+        theme="light",
+    )
+
+    view
+    return
+
+
+@app.cell
+def _(pr_romol, rodraw, select_molecule):
+
+    # Chem.SanitizeMol(pr_romol)
+    result = select_molecule(pr_romol, "chain A and resi 210")
+    rodraw(result.mol)
     return
 
 

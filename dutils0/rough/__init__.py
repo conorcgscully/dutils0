@@ -3,6 +3,10 @@ __all__ = [
     "gemmi_from_rdkit",
     "gemmi_to_pymol",
     "gemmi_to_rdkit",
+    "get_coord_array",
+    "mol_coordinates_array",
+    "distance",
+    "centroid",
     "protein_to_rdkit",
     "pymol_select",
     "read_protein_bytes",
@@ -26,6 +30,15 @@ def __getattr__(name: str):
     if name == "gemmi_to_rdkit":
         from .convert import gemmi_to_rdkit
         return gemmi_to_rdkit
+    if name == "get_coord_array":
+        from .mol3d import get_coord_array
+        return get_coord_array
+    if name == "distance":
+        from .mol3d import distance
+        return distance
+    if name == "centroid":
+        from .mol3d import centroid
+        return centroid
     if name == "protein_to_rdkit":
         from .convert import protein_to_rdkit
         return protein_to_rdkit
