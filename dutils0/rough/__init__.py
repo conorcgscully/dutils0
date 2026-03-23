@@ -4,6 +4,8 @@ __all__ = [
     "gemmi_to_pymol",
     "gemmi_to_rdkit",
     "get_coord_array",
+    "get_molecule",
+    "get_residue",
     "mol_coordinates_array",
     "distance",
     "centroid",
@@ -11,9 +13,10 @@ __all__ = [
     "pymol_select",
     "read_protein_bytes",
     "read_protein_str",
+    "select_residue_as_mol",
     "write_protein_bytes",
     "write_protein_str",
-    "flag_protein_residues_by_ligand_proximity"
+    "flag_protein_residues_by_ligand_proximity",
 ]
 
 
@@ -51,12 +54,21 @@ def __getattr__(name: str):
     if name == "read_protein_str":
         from .read import read_protein_str
         return read_protein_str
+    if name == "select_residue_as_mol":
+        from .select import select_residue_as_mol
+        return select_residue_as_mol
     if name == "write_protein_bytes":
         from .write import write_protein_bytes
         return write_protein_bytes
     if name == "write_protein_str":
         from .write import write_protein_str
         return write_protein_str
+    if name == "get_molecule":
+        from .molecule import get_molecule
+        return get_molecule
+    if name == "get_residue":
+        from .residue import get_residue
+        return get_residue
     if name == "flag_protein_residues_by_ligand_proximity":
         from .proximity import flag_protein_residues_by_ligand_proximity
         return flag_protein_residues_by_ligand_proximity

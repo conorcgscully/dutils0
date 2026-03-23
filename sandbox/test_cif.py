@@ -65,7 +65,32 @@ def _(pr_romol, rodraw, select_molecule):
 
 
 @app.cell
-def _():
+def _(Chem, rodraw):
+    _m = Chem.MolFromSmiles('c1cnccc1O')
+    for _a in _m.GetAtoms():
+        print(dir(_a))
+    rodraw(_m)
+    return
+
+
+@app.cell
+def _(Chem):
+
+    _m = Chem.MolFromSmiles('c1cnccc1O')
+
+    mol = Chem.AddHs(_m)
+    # Set atom names
+    canonical_order = Chem.CanonicalRankAtoms(mol)
+    Chem.AssignStereochemistry(mol, force=True, cleanIt=True)
+    for atom, can_idx in zip(mol.GetAtoms(), canonical_order):
+        atom_name = atom.GetSymbol().upper() + str(can_idx + 1)
+        atom.SetProp("name", atom_name)
+    return (canonical_order,)
+
+
+@app.cell
+def _(canonical_order):
+    list(canonical_order)
     return
 
 
