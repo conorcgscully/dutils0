@@ -115,3 +115,6 @@ cython_debug/
 Thumbs.db
 ehthumbs.db
 Desktop.ini
+
+# local developer machine configuration
+.env.local

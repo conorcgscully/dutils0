@@ -10,6 +10,31 @@ Utility package.
 pip install -e .
 ```
 
+### Internal dependency: ncycle-core (local clone)
+
+`ncycle-core` is an internal repository and is expected to be installed from a local
+clone in editable mode.
+
+Quick setup:
+
+1. Clone `ncycle-core` somewhere on your machine.
+2. Install both repos in your environment:
+
+```bash
+pip install -e /path/to/ncycle-core
+pip install -e .
+```
+
+For recurring local runs, you can also use the local helper workflow:
+
+1. Copy `.env.local.example` to `.env.local`.
+2. Fill in your local paths (`MICROMAMBA_BIN`, `MICROMAMBA_ENV_PREFIX`, `NCYCLE_CORE_PATH`).
+3. Run:
+
+```bash
+./scripts/test_local_env.sh
+```
+
 ### Pixi
 
 [Pixi](https://pixi.sh) uses this repo’s `pyproject.toml` and installs the package in editable mode. From the repo root:
