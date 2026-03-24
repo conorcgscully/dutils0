@@ -118,3 +118,4 @@ Desktop.ini
 
 # local developer machine configuration
 .env.local
+env.prod.json
