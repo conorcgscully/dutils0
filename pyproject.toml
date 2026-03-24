@@ -18,7 +18,7 @@ testpaths = ["dutils0/tests"]
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["dutils0*", "rough*"]
+include = ["dutils0*", "mol*"]
 
 # Pixi: use conda-forge for Python; run `pixi install` to create env with dutils0 in editable mode
 [tool.pixi.project]

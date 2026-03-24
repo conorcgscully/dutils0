@@ -1,4 +1,4 @@
-"""Tests for dutils0.rough.read_protein_bytes, read_protein_str, gemmi_from_rdkit, gemmi_to_rdkit, gemmi_to_pymol, and protein_to_rdkit."""
+"""Tests for dutils0.mol.read_protein_bytes, read_protein_str, gemmi_from_rdkit, gemmi_to_rdkit, gemmi_to_pymol, and protein_to_rdkit."""
 
 from pathlib import Path
 from unittest.mock import MagicMock, patch
@@ -7,7 +7,7 @@ import gemmi
 import pytest
 from rdkit import Chem
 
-from dutils0.rough import (
+from dutils0.mol import (
     gemmi_from_rdkit,
     gemmi_to_pymol,
     gemmi_to_rdkit,
@@ -315,7 +315,7 @@ def test_gemmi_to_rdkit_invalid_structure_type():
 def test_gemmi_to_rdkit_rdkit_returns_none(path_6h41_cif):
     """When MolFromPDBBlock returns None, gemmi_to_rdkit raises ValueError."""
     st = read_protein_bytes(path_6h41_cif)
-    with patch("dutils0.rough.convert.Chem.MolFromPDBBlock", return_value=None):
+    with patch("dutils0.mol.convert.Chem.MolFromPDBBlock", return_value=None):
         with pytest.raises(ValueError, match="RDKit failed to parse PDB block"):
             gemmi_to_rdkit(st)
 
@@ -348,7 +348,7 @@ def test_gemmi_from_rdkit_mol_to_pdb_block_returns_none(path_6h41_cif):
     """When MolToPDBBlock returns None, gemmi_from_rdkit raises ValueError."""
     st = read_protein_bytes(path_6h41_cif)
     mol = gemmi_to_rdkit(st)
-    with patch("dutils0.rough.convert.Chem.MolToPDBBlock", return_value=None):
+    with patch("dutils0.mol.convert.Chem.MolToPDBBlock", return_value=None):
         with pytest.raises(ValueError, match="MolToPDBBlock returned None or empty"):
             gemmi_from_rdkit(mol)
 
@@ -357,7 +357,7 @@ def test_gemmi_from_rdkit_mol_to_pdb_block_returns_empty(path_6h41_cif):
     """When MolToPDBBlock returns empty string, gemmi_from_rdkit raises ValueError."""
     st = read_protein_bytes(path_6h41_cif)
     mol = gemmi_to_rdkit(st)
-    with patch("dutils0.rough.convert.Chem.MolToPDBBlock", return_value=""):
+    with patch("dutils0.mol.convert.Chem.MolToPDBBlock", return_value=""):
         with pytest.raises(ValueError, match="MolToPDBBlock returned None or empty"):
             gemmi_from_rdkit(mol)
 
@@ -366,7 +366,7 @@ def test_gemmi_from_rdkit_parsing_failure_propagates(path_6h41_cif):
     """When read_protein_str raises (e.g. bad PDB), gemmi_from_rdkit propagates the exception."""
     st = read_protein_bytes(path_6h41_cif)
     mol = gemmi_to_rdkit(st)
-    with patch("dutils0.rough.convert.read_protein_str", side_effect=ValueError("parse failed")):
+    with patch("dutils0.mol.convert.read_protein_str", side_effect=ValueError("parse failed")):
         with pytest.raises(ValueError, match="parse failed"):
             gemmi_from_rdkit(mol)
 
@@ -421,7 +421,7 @@ def test_gemmi_to_pymol_serialization_failure_propagates(path_6h41_cif):
     """When write_protein_str raises, gemmi_to_pymol propagates the exception."""
     st = read_protein_bytes(path_6h41_cif)
     mock_cmd = MagicMock()
-    with patch("dutils0.rough.convert.write_protein_str", side_effect=ValueError("serialization failed")):
+    with patch("dutils0.mol.convert.write_protein_str", side_effect=ValueError("serialization failed")):
         with pytest.raises(ValueError, match="serialization failed"):
             gemmi_to_pymol(st, "mymol", cmd=mock_cmd)
     mock_cmd.read_pdbstr.assert_not_called()
@@ -495,7 +495,7 @@ def test_protein_to_rdkit_serialization_failure_propagates(path_6h41_cif):
     st = read_protein_bytes(path_6h41_cif)
     model = st[0]
     mock_cmd = MagicMock()
-    with patch("dutils0.rough.convert.write_protein_str", side_effect=ValueError("serialization failed")):
+    with patch("dutils0.mol.convert.write_protein_str", side_effect=ValueError("serialization failed")):
         with pytest.raises(ValueError, match="serialization failed"):
             protein_to_rdkit(model, cmd=mock_cmd)
     mock_cmd.read_pdbstr.assert_not_called()
@@ -507,7 +507,7 @@ def test_protein_to_rdkit_rdkit_returns_none(path_6h41_cif):
     model = st[0]
     mock_cmd = MagicMock()
     mock_cmd.get_pdbstr.return_value = write_protein_str(st, "pdb")
-    with patch("dutils0.rough.convert.Chem.MolFromPDBBlock", return_value=None):
+    with patch("dutils0.mol.convert.Chem.MolFromPDBBlock", return_value=None):
         with pytest.raises(ValueError, match="RDKit failed to parse PDB block"):
             protein_to_rdkit(model, cmd=mock_cmd)
     mock_cmd.delete.assert_called_once_with("_dutils0_protein_to_rdkit")

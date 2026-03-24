@@ -3,7 +3,7 @@ from __future__ import annotations
 import pytest
 from rdkit import Chem
 
-from dutils0.rough.select import select_residue_as_mol
+from dutils0.mol.select import select_residue_as_mol
 
 
 def _tiny_pdb_block() -> str:

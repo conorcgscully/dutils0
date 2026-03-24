@@ -1,11 +1,11 @@
-"""Tests for dutils0.rough.mol3d."""
+"""Tests for dutils0.mol.mol3d."""
 
 import numpy as np
 import pytest
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
-from dutils0.rough.mol3d import mol_coordinates_array
+from dutils0.mol.mol3d import mol_coordinates_array
 
 
 def _embed_3d(smiles: str, *, seed: int = 0xC0FFEE) -> Chem.Mol:

@@ -3,11 +3,11 @@ Example usage of extract_selected_atoms_as_pdb.
 
 Run from repo root with a PDB file path, e.g.:
 
-    python -m rough.example_usage path/to/structure.pdb
+    python -m dutils0.mol.example_usage path/to/structure.pdb
 
 Or import and call:
 
-    from rough import extract_selected_atoms_as_pdb
+    from dutils0.mol import extract_selected_atoms_as_pdb
 
     # Residue selection: keep only chain A, residue 42
     pdb_str = extract_selected_atoms_as_pdb("file.pdb", residue_selector="A:42")
@@ -20,12 +20,12 @@ from __future__ import annotations
 
 import sys
 
-from rough import extract_selected_atoms_as_pdb
+from dutils0.mol import extract_selected_atoms_as_pdb
 
 
 def main() -> None:
     if len(sys.argv) < 2:
-        print("Usage: python -m rough.example_usage <pdb_path>")
+        print("Usage: python -m dutils0.mol.example_usage <pdb_path>")
         sys.exit(1)
     pdb_path = sys.argv[1]
 

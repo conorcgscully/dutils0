@@ -1,10 +1,10 @@
-"""Tests for dutils0.rough.pymol_select."""
+"""Tests for dutils0.mol.pymol_select."""
 
 from unittest.mock import MagicMock
 
 import pytest
 
-from dutils0.rough import pymol_select
+from dutils0.mol import pymol_select
 
 
 def test_pymol_select_happy_path():

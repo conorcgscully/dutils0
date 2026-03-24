@@ -1,10 +1,10 @@
-"""Tests for dutils0.rough.pdb_extract."""
+"""Tests for dutils0.mol.pdb_extract."""
 
 from pathlib import Path
 
 import pytest
 
-from dutils0.rough.pdb_extract import extract_selected_atoms_as_pdb
+from dutils0.mol.pdb_extract import extract_selected_atoms_as_pdb
 
 
 def _path_6h41_cif() -> Path:

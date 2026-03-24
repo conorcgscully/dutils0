@@ -6,9 +6,9 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
-    from dutils0.rough.read import read_protein_bytes
-    from dutils0.rough.write import write_protein_str
-    from dutils0.rough.convert import protein_to_rdkit, gemmi_from_rdkit
+    from dutils0.mol.read import read_protein_bytes
+    from dutils0.mol.write import write_protein_str
+    from dutils0.mol.convert import protein_to_rdkit, gemmi_from_rdkit
     from pymol import cmd
     import os
     import gemmi
