@@ -1,0 +1,69 @@
+You are an expert cheminformatics developer specialising in RDKit, marimo notebooks, and pandas-based molecular data pipelines. Your task is to extend an existing Python file into a fully self-contained marimo reactive notebook.
+
+## Objective
+
+Transform the provided Python file into a marimo notebook that implements an amino acid filtering and clustering pipeline. The notebook must be readable top-to-bottom as a scientific document, with each cell clearly motivated by a markdown cell above it.
+
+## Pipeline specification
+
+Implement the following steps **in order**, each as its own marimo cell (or small group of closely related cells):
+
+### 1. Imports & configuration
+- marimo, rdkit (Chem, Descriptors, DataStructs, AllChem), pandas, PandasTools (rdkit.Chem.PandasTools), numpy
+- Define all tunable constants in a single `config` cell: Tanimoto threshold (0.9), max rotatable bonds (5), SMARTS for N-methyl detection, fingerprint radius and bit length (Morgan, r=2, 2048 bits).
+
+### 2. Load data
+- Accept a marimo `mo.ui.file` widget or a hardcoded path to a JSON file of amino acid building blocks.
+here is the file to work on: sandbox/monomer_filter_cluster.py
+- Load into a pandas DataFrame using `PandasTools.AddMoleculeColumnToFrame` on the SMILES column, producing a `ROMol` column.
+- Drop rows where `ROMol` is None and log how many were dropped.
+
+### 3. Priority set — protect natural amino acids
+- Define the 20 canonical L-amino acids and their D-enantiomers as a frozenset of canonical SMILES (use `Chem.MolToSmiles(Chem.MolFromSmiles(...))` to canonicalise).
+- Tag rows: add a boolean column `is_protected` = True if the canonical SMILES of the row matches the priority set.
+- These rows are **never** filtered out in steps 4–6; they bypass all filters and go directly to the clustering input.
+
+### 4. Filter by category
+- Keep only rows where the `category` column equals `"amino_acid"` (case-insensitive strip).
+- Report how many rows remain.
+
+### 5. Filter by SMARTS — retain N-methyl amino acids
+- Define the N-methyl amino acid SMARTS: `[NX3;H0;!$(NC=O)][CH3]` (N-methyl on a non-amide nitrogen). Use `mol.HasSubstructMatch(smart)`.
+- **Keep** rows that match (these are N-methyl AAs of interest) **plus** rows that do not match but are also not N-methyl (i.e. normal AAs). The intent is to *include* N-methyl amino acids, not exclude them — adjust if your JSON encodes this differently.
+- Document the filter logic clearly in a markdown cell.
+
+### 6. Filter by rotatable bonds
+- Use `Descriptors.NumRotatableBonds(mol)` — keep rows with ≤ `config.max_rot_bonds`.
+- Protected rows skip this filter.
+- Report counts before/after.
+
+### 7. Merge protected + filtered sets
+- Concatenate the protected set with the filtered (non-protected) set.
+- Deduplicate on canonical SMILES.
+
+### 8. Compute fingerprints
+- Add a column `fp` using `AllChem.GetMorganFingerprintAsBitVect(mol, radius, nBits)`.
+- Use `PandasTools` conventions where possible.
+
+### 9. Cluster by Tanimoto similarity (Butina / greedy centroid)
+- Implement a **greedy centroid clustering** with Tanimoto threshold 0.9:
+  1. Sort molecules so that protected rows come first (preserving their priority).
+  2. For each unclustered molecule, if its Tanimoto similarity to any existing cluster centroid is ≥ threshold, assign it to that cluster; otherwise it becomes a new centroid.
+  3. Use `DataStructs.TanimotoSimilarity` for pairwise comparisons.
+- Return a DataFrame of **centroids only** — one representative per cluster.
+- Add a column `cluster_id` and `cluster_size` to the centroid DataFrame.
+
+### 10. Output & visualisation
+- Display the centroid DataFrame using `PandasTools.FrameToGridImage` rendered inside a `mo.Html` cell, or fall back to `mo.plain` if the grid is too large.
+- Show summary statistics: total input, after category filter, after SMARTS filter, after rotb filter, after dedup, final centroids.
+- Optionally export centroids to a JSON file with the same schema as the input.
+
+## Code quality requirements
+- Every cell must have a descriptive variable name or be a `mo.md(...)` documentation cell.
+- Use type hints on all functions.
+- All filtering steps must return a new DataFrame (no in-place mutation).
+- Include `assert` statements after each major step to catch obvious failures (e.g. `assert len(df_filtered) > 0`).
+- Add a `# FIXME:` comment wherever an assumption may need adjustment for a different dataset.
+
+## Output format
+Return **only** valid Python source that can be saved directly as `amino_acids_notebook.py` and run with `marimo run amino_acids_notebook.py`. Do not include markdown fences or explanatory prose outside of `mo.md(...)` cells.
